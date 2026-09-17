@@ -1,6 +1,6 @@
 # soma-moa : Design Philosophy & Prior Art Declaration
 > **original design:** `deundeuni (soma-moa)` | **repository:** `github.com/soma-moa`  
-> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2 Final:** 2026-08-27  
+> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.1 Revision:** 2026-09-17  
 > **domain:** `somamoa.ai.kr` | **License:** CC BY 4.0 & DPL  
 > **네이밍 사전 정의:** 오픈소스 프로토콜 및 코드베이스 표기는 `soma-moa`(소문자 하이픈), 서비스 브랜드 및 프로젝트 대표 명칭은 `Somamoa`를 사용하며 동일 정체성을 지닌다.  
 > **원본 조항:** 한국어 원문(PHILOSOPHY.ko.md)이 기준 원본이며, 번역본은 참고용이다.
@@ -21,6 +21,9 @@ soma-moa는 영어로 먼저 만들고 한국어로 번역한 기술이 아니�
 영어 gather, collect는 "모은다"로 번역되지만, "파편화된 에러 로그와 분산된 단말을 한데 보듬어 모은다"는 온도는 한국어 '모아'에만 담겨 있다.
 
 이것이 soma-moa의 정체성이자 설계의 시작점이다.
+
+**독립적 선행 연구 및 무독점 고지 (Modesty & Non-Exclusivity Notice):**  
+본 프로토콜은 1인 설계자의 일상 및 현장 경험과 사유에서 구상되었으나, 유사한 기술적 사상이나 아이디어가 타 연구자에 의해 독립적으로 선행 연구되었을 가능성을 배제하지 않는다. 본 문서는 특정 주체의 배타적 독점을 방지하고, 공공의 선행기술(Prior Art)로서 누구나 자유롭게 참조 및 발전시킬 수 있도록 무상 공개된다.
 
 ---
 
@@ -78,12 +81,12 @@ SOMA라는 영문명 외에, 발음하기 편하고 직관적인 이름을 찾�
 
 v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
-- **L0 Physical:** CWP Battery-Swap + V-Home Self-Align + 0.1ms Hardware Intercept E-Stop (Motor EN PIN LOW 차단 제어)
+- **L0 Physical:** CWP Battery-Swap + V-Home Self-Align + 0.1ms Hardware Intercept E-Stop (Motor EN PIN LOW 차단 제어 지향)
 - **L1 Compute:** Chiplet-APU Many as One Dual-Redundant + CCS 70%/100ms Raft Role-Swapping + 갓길 3중 관제
 - **L2 Governance:** Brain(Probabilistic) vs Governance(Deterministic) 물리 분리 + eFPGA 0.1ms Blocker + FSM
 - **L3 Social:** Quiet Assist Haptic 1x/2x + Anonymized Delta Logging PII 10초 파기
 
-**엣지 검증 파라미터:** CBOR L0 24B + L1 33B <50B, SDK 35.2KB <42KB, RAM 3.2KB <10MB, L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
+**엣지 검증 파라미터 (Target Design Benchmarks):** CBOR L0 24B + L1 33B <50B, SDK 35.2KB <42KB, RAM 3.2KB <10MB, L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
 
 **L2 FSM 전이 조건 및 역할 정의:**
 - **IDLE:** 정상 대기 상태
@@ -108,7 +111,7 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 `moa`는 다 모으지만, 쓰임은 나눠야 가볍다. 그래서 3분류로 소분류했다.
 
-- **기업용(Enterprise):** 가동 연속성이 중요한 운영 환경. 공장, 물류, 병원, AS센터 상주. L0 0.1ms 차단 제어 + L1 Many as One + L2 결정론적 집행 중심. 인간의 최종 판단을 보장.
+- **기업용(Enterprise):** 가동 연속성이 중요한 운영 환경. 공장, 물류, 병원, AS센터 상주. L0 0.1ms 차단 제어 지향 + L1 Many as One + L2 결정론적 집행 중심. 인간의 최종 판단을 보장.
 - **일상용(Daily):** 탐색과 지원이 필요한 환경. 푸드코너, 백화점 서비스센터, 도서관, 음악. Vibe Search + L3 에스컬레이션 중심. 신뢰도 90% 미만 시 단정적 추측 지양.
 - **개인용(Personal):** 개인의 영역을 존중하는 환경. 약/할일/건강, 식단/알러지, 수리이력. PII 10초 파기 + 햅틱 1회/2회 + 무분별한 기록 최소화 지향.
 
@@ -123,7 +126,7 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 실제 구현은 최신 안전 프레임워크에 기반하여 확장 적용한다:
 - **Safety-II / Resilience (Hollnagel):** 사고 예방뿐만 아니라 정상적으로 작동하는 9,999건의 상태를 안정적으로 유지하는 데 집중. Many as One과 Raft 기반 아키텍처로 구현.
 - **Just Culture + 익명 보고:** 자율적 보고 문화 조성을 위해 CBOR 24B 익명 로깅 + PII 10초 파기 + 경미한 항목 기록 최소화 체계 적용.
-- **스위스 치즈 모델의 능동화:** 방어선 누출 위험을 능동적으로 감지하여 백혈구 스캔, T-Reg 15%, Tri-State 절단을 통해 결함을 사전 완화.
+- **스위스 치즈 모델의 능동화:** 방어선 누출 위험을 능동적으로 감지하여 백혈구 스캔, T-Reg 15%, Tri-State 절단을 통해 결함을 사전 완화 지향.
 - **정량 표준 정립:** 하인리히 비율 대신 ISO 13849-1 Cat 4 PL e / IEC 61508 SIL3 / GDPR 5(1)(e) 등 정식 규격 지표 원용.
 
 > [S-01] Heinrich 1931은 역사적·철학적 동기로 원용하며, 실제 구현은 Safety-II, Just Culture, 결정론적 제어와 익명 근접보고 체계에 기반한다.
@@ -144,9 +147,9 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 ### 4-6. 정량 핵심 스펙 명세 (System Specification Summary)
 
-선행기술 대조 및 심사 정합성을 위한 계층별 주요 정량 파라미터 종합 명세는 다음과 같다.
+선행기술 대조 및 심사 정합성을 위한 계층별 주요 정량 파라미터 종합 명세(Target Design Benchmarks)는 다음과 같다.
 
-- **L0 Physical 지연시간 —** 0.1ms Hardware Intercept E-Stop 차단 제어 (Motor EN PIN LOW)
+- **L0 Physical 지연시간 —** 0.1ms Hardware Intercept E-Stop 차단 제어 지향 (Motor EN PIN LOW)
 - **L0 물리 오차 흡수 —** V-Home Self-Align ±5mm 정밀 흡수
 - **L0/L1 검증 지연시간 —** L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
 - **L1 Compute 합의 임계치 —** CCS Raft 70% 동의 / 100ms Role-Swapping
@@ -177,7 +180,7 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 - **기록 없는 배려:** 경미한 단순 실수는 10초 후 자동 삭제를 통해 부담을 완화하며, 물리적 위험 항목은 기록을 유지
 - **기술자 대우 원칙:** 감시 목적이 아닌 보조자(Auxiliary)로서의 가치 정립
 
-**요약:** 물리적 안전은 L0 차단으로 명확히 확보하고, 사회적 안전은 진동 알림과 자율 삭제 조항을 통해 부드럽게 구현한다.
+**요약:** 물리적 안전은 L0 차단 제어로 명확히 확보하고, 사회적 안전은 진동 알림과 자율 삭제 조항을 통해 부드럽게 구현한다.
 
 ---
 
@@ -188,12 +191,11 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 ---
 
-### 6. 크로스 AI 기술 검증 및 법리적 주체 명시 (Attribution & Legal Doctrine)
+### 6. 기술 작성 지원 및 법리적 주체 명시 (Technical Drafting Support & Legal Doctrine)
 
-- **Meta AI — 에지 하드웨어 최적화 및 Cloud-Sign / Edge-Verify 연동:** 상위 서버/클라우드에서 Ed25519 비대칭키 서명을 발행(Cloud-Sign)하고, L0 실시간 동기 영역에서는 0.1ms HMAC HW Bypass를, L1 비동기 영역에서는 2~5ms Ed25519 오프라인 서명 검증(Edge-Verify)을 이원화 적용하는 인증 구조 정립. RAM <10MB, CBOR <50B, 42KB SDK 구조 검증.
-- **Gemini — 멀티모달 공간 AI & 거버넌스:** Brain vs Governance 분리, Predictive Pre-lock 80%, Article X I/O 2대, 300/29/1 플라이휠 검증.
-- **Claude (Anthropic) — 기술 문서 아키텍처 검수 및 정합성 검증:** 계층별 기술 스펙 대조, 서사 및 정량 수치 정합성 검토, 선행기술 방어 백서 구조 정비 및 검수 도구로 원용.
-- **인간 독자 창작권 및 법리적 지원 원용 (USPTO / EPO / 판례):** AI 발명자성을 인정하지 않는 미국 대법원/CAFC 판례(Thaler v. Vidal), USPTO AI 발명 자격 가이던스(2024.02), EPO 심사지침(G-II 3.3.1)을 원용함. AI 모델(Meta AI, Gemini, Claude)은 기술 교차 검증 및 코드화 보조 도구일 뿐이며, 시스템의 독자적 기술 착상(Conception) 주체는 인간 설계자(deundeuni)임을 법리적으로 정립한다.
+- **Technical & Legal Drafting Support:** Generic Generative AI Text Refinement & Structuring Tools (범용 생성형 AI 텍스트 정제 및 구조화 도구)
+- **역할 및 IP 귀속 고지:** 본 문서는 범용 생성형 AI 텍스트 정제 및 구조화 도구를 활용하여 기술 문맥의 구조화, 검수 및 표현 완화 보조를 수행하였다. 본 고지는 역할 투명성을 위한 것이며, AI 프롬프트 및 내부 추론 과정은 공개하지 않는다. 모든 핵심 기술 착상(Conception), 시스템 독자 아키텍처 설계, 최종 결정 및 지식재산권(IP) 소유권은 원안자(deundeuni / soma-moa)에게 전적으로 귀속된다.
+- **법리적 원용 (USPTO / EPO / 판례):** AI 발명자성을 인정하지 않는 미국 대법원/CAFC 판례(*Thaler v. Vidal*), USPTO AI 발명 자격 가이던스(2024.02), EPO 심사지침(G-II 3.3.1)을 원용한다. 범용 AI 도구는 기술 문서 정제 보조 수단일 뿐이며, 본 기술 체계의 독자적 착상 주체는 인간 설계자(deundeuni)임을 법리적으로 확정한다.
 - **규격 준수:** ISO 13849-1 Cat 4 / PL e, IEC 61508 SIL3, GDPR 5(1)(e) 표준 준수 지향.
 
 ---
@@ -213,7 +215,7 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 soma-moa는 이러한 현장 사유를 글로벌 규격 코드로 체계화한 선행기술 기록이다.
 
-이 설계 체계화 과정에서 구글의 Transformer(2017), TensorFlow(2015), Gemma(2024), Meta의 Llama(2023~) 및 Anthropic의 Claude 등 개방된 기반 모델과 AI 도구를 검증 도구로 활용하였다. Meta AI, Gemini, Claude는 기술 검증 및 교차 검토 도구이며, 본 기술의 핵심 착상 및 독자적 아키텍처 설계는 deundeuni에게 있다.
+이 설계 체계화 과정에서 트랜스포머 아키텍처 및 개방된 기술 기반과 함께 범용 AI 문맥 정제 도구를 검토 보조 수단으로 활용하였다. 모든 핵심 착상 및 독자적 아키텍처 설계의 법리적·기술적 주체는 deundeuni에게 있다.
 
 ---
 
@@ -223,12 +225,23 @@ soma-moa는 이러한 현장 사유를 글로벌 규격 코드로 체계화한 �
 - **기능안전:** ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e)
 - **통신/합의:** RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032
 - **법률:** USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1
-- **기반 개방:** Vaswani et al. 2017 Transformer, Google TensorFlow 2015, Google Gemma 2024, Meta Llama 2/3 2023-2024, Anthropic Claude 2023-2026
-- **검증 도구:** Meta AI, Gemini, Claude as Verification Tools, Conception by deundeuni
+- **검증 및 문서 작성 도구:** Generic Generative AI Text Refinement & Structuring Tools (Conception by deundeuni)
 - **영업비밀:** eFPGA RTL, 정밀 CAD, 펌웨어 바이너리는 비공개 유지
+
+---
+
+### 10. 변경 이력 및 정합화 패치 기록 (Revision History)
+
+- **v2.2.1 (2026-09-17):**
+  - **독립 선행 연구 및 무독점 고지 신설 (0장):** POLYLINK-HUD 0.9항 취지를 원용하여 공공 선행기술화 및 겸양 고지 명시.
+  - **기술 작성 지원 및 법리적 주체 명시 일반화 (6장, 8장, 9장):** 특정 AI 기업 실명 제거 및 v3.6 Appendix C 표준 문구 적용, Sole Invention(deundeuni) 법리적 귀속 재확인.
+  - **Target Design Benchmarks 톤 보정 (4-1장, 4-6장):** 정량 스펙을 목표 설계 벤치마크로 명확히 하고 지향적 표현 정비.
+- **v2.2 Final (2026-08-27):** 4층 생존 아키텍처(L0~L3) 및 L2 FSM 명세 확정, 소분류(기업/일상/개인) 적용.
+- **v2.0 (2026-08-25):** 선행기술 방어적 무상 공개 선언, `soma-moa` 소문자 하이픈 명칭 확정.
+- **v1.0 / v0.1 (2026-08-24):** SOMA 및 OSRP 초기 거버넌스 아키텍처 기획.
 
 ---
 origin: by deundeuni (soma-moa) - factory sample work & construction worker background  
 domain: somamoa.ai.kr / Somamoa.ai.kr | repo: github.com/soma-moa  
 Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (등재 완료 / Active)  
-prior art: 2026-08-25 | v2.2 Final: 2026-08-27 | License: CC BY 4.0 & DPL
+prior art: 2026-08-25 | v2.2.1 Revision: 2026-09-17 | License: CC BY 4.0 & DPL
