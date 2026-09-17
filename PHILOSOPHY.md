@@ -1,8 +1,8 @@
 # soma-moa : Design Philosophy & Prior Art Declaration
 > **original design:** `deundeuni (soma-moa)` | **repository:** `github.com/soma-moa`  
-> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.1 Revision:** 2026-09-17  
-> **domain:** `somamoa.ai.kr` | **License:** CC BY 4.0 & DPL  
-> **Naming Definition:** The open-source protocol and codebase are denoted as `soma-moa` (lowercase with a hyphen), while the service brand and representative project name are `Somamoa`, sharing the same identity.  
+> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.4 Revision:** 2026-09-18  
+> **technical identifier:** `soma-moa` | **License:** CC BY 4.0 & DPL (Defensive Publication License)  
+> **Naming Definition:** The term `soma-moa` (lowercase with a hyphen) in this document is used as an open-source technical protocol identifier for prior art disclosure and codebase distinction, not as a commercial trademark.  
 > **Original Clause:** The Korean text (`PHILOSOPHY.ko.md`) is the definitive original version; translations are for reference purposes only.
 
 This document is a record of *why* `soma-moa` was designed this way.  
@@ -40,7 +40,7 @@ The word 'Routine' was discarded because it made it look like a simple scheduler
 
 ---
 
-### 2. v1.0 SOMA - Putting on a Body
+### 2. v1.0 SOMA - Putting on a Body & Axiom 0
 
 **Project Name: SOMA (Symbiotic Operations & Machine Architecture)**
 
@@ -49,6 +49,8 @@ We scaled up the governance needed the moment a virtual AI puts on a physical bo
 - **Design Structure:** Separated into a governance layer at the top responsible for safety and control, regardless of the hardware chassis form (wheels, quadruped, humanoid).
 - **Enactment of Axiom 0:**  
   *"The Robot/AI is Sub, the system governance is Main, but even that governance is Auxiliary to the human's main task."*
+- **Horizontal Multi-System Principle:**  
+  In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as equal horizontal auxiliary means to assist human productive activities within the system, rather than forming a vertical hierarchy of dominance.
 
 ---
 
@@ -86,14 +88,14 @@ Building on the v2.0 name, the basic skeleton of the system was finalized in v2.
 - **L2 Governance:** Physical separation of Brain (Probabilistic) vs. Governance (Deterministic) + eFPGA 0.1ms Blocker + FSM
 - **L3 Social:** Quiet Assist Haptic 1x/2x + Anonymized Delta Logging PII destruction within 10 seconds
 
-**Edge Verification Parameters (Target Design Benchmarks):** CBOR L0 24B + L1 33B <50B, SDK 35.2KB <42KB, RAM 3.2KB <10MB, L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
+**Edge Verification Parameters (Target Design Benchmarks):** CBOR L0 24B / L1 32B (each <50B), SDK 35.2KB (<42KB), RAM 3.2KB (<10MB), L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
 
 **L2 FSM Transition Conditions and Role Definitions:**
 - **IDLE:** Normal standby state.
 - **MONITOR:** Real-time monitoring of edge sensors and logs.
 - **VALIDATE (<0.02ms):** Deterministic safety rule verification based on eFPGA.
 - **PRELOCK (80%):** Preemptive hardware lock preparation upon reaching 80% risk prediction probability.
-- **OVERRIDE:** The stage where abnormal control attempts by the AI inference (Brain) are physically and immediately nullified by L2 deterministic governance and human control rights, securing dominance.
+- **Brain-Override:** The stage where abnormal control attempts by the AI inference (Brain) are physically and immediately nullified by L2 deterministic governance and human control rights, securing dominance.
 - **E_STOP_LATCH (<0.1ms):** Secures the motor power cutoff latch within 0.1ms.
 - **RECOVERY:** Recovery is not permitted without Ed25519 human signature approval, maintaining a permanent latch state.
 
@@ -125,7 +127,7 @@ Heinrich's 300:29:1 is a philosophical foundation established in 1931. Rather th
 
 The actual implementation is applied expansively based on modern safety frameworks:
 - **Safety-II / Resilience (Hollnagel):** Focuses not only on preventing accidents but on stably maintaining the 9,999 normal operating states. Implemented with Many as One and Raft-based architectures.
-- **Just Culture + Anonymous Reporting:** Applies CBOR 24B anonymous logging + PII 10-second destruction + a system minimizing the recording of minor items to foster an autonomous reporting culture.
+- **Just Culture + Anonymous Reporting:** Applies CBOR anonymous logging + PII 10-second destruction + a system minimizing the recording of minor items to foster an autonomous reporting culture.
 - **Active Swiss Cheese Model:** Aims to proactively mitigate defects by actively detecting defense line leakage risks through Leukocyte Scanning, T-Reg 15%, and Tri-State isolation.
 - **Establishing Quantitative Standards:** Cites formal standard indicators such as ISO 13849-1 Cat 4 PL e / IEC 61508 SIL3 / GDPR 5(1)(e) instead of the Heinrich ratio.
 
@@ -154,8 +156,9 @@ The comprehensive specification of key quantitative parameters by layer (Target 
 - **L0/L1 Verification Latency —** L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519.
 - **L1 Compute Consensus Threshold —** CCS Raft 70% agreement / 100ms Role-Swapping.
 - **L1 Compute Backpressure —** Automatic throttling upon detecting 85% backpressure inside the fabric.
-- **L1 Compute Data Payload —** CBOR packet L0 24B + L1 33B (Limited to <50B).
+- **L1 Compute Data Payload —** CBOR packet L0 24B / L1 32B (each Limited to <50B).
 - **L2 Governance Verification Latency —** eFPGA deterministic VALIDATE <0.02ms.
+- **L2 Governance Cutoff Latch —** E_STOP_LATCH <0.1ms physical power cutoff.
 - **L2 Governance Prediction Threshold —** PRELOCK preemptive block preparation upon reaching 80% risk probability.
 - **L2 Governance Self-Healing Constraint —** T-Reg 15% limit and permanent isolation upon 3 consecutive failures.
 - **L3 Social Confidence Threshold —** No guessing if Daily Vibe Search confidence is below 90%.
@@ -200,12 +203,11 @@ The comprehensive specification of key quantitative parameters by layer (Target 
 
 ---
 
-### 7. Defensive Rights & Somamoa Brand Expansion
+### 7. Defensive Rights & Technical Protocol Identifier Notice
 
-- **Open-source protocol codename:** `soma-moa`
-- **Official project and brand name:** `Somamoa`
-- **Official domains:** `somamoa.ai.kr` / `Somamoa.ai.kr`
-- **Defensive Rights & Publication:** The technical configuration and ideas of this protocol are disclosed free of charge as prior art. It aims to protect the technology ecosystem by expanding the scope of the public domain against unauthorized patenting by other entities.
+- **Technical Protocol Identifier:** `soma-moa` (lowercase with a hyphen)
+- **Technical Identifier Notice:** The term `soma-moa` in this document is used as an **open-source technical protocol identifier** for public prior art disclosure and codebase distinction, not as a commercial trademark.
+- **DPL Defensive Publication Declaration:** This protocol is published under CC BY 4.0 and DPL (Defensive Publication License v1.0). In accordance with DPL terms, any entity referencing or citing these technical configurations and ideas cannot assert exclusive patent rights over them. This explicitly mitigates unauthorized patent monopolization risks by third parties and defensively expands the public technical domain.
 
 ---
 
@@ -219,29 +221,40 @@ During this design systematization process, generic AI context refinement tools,
 
 ---
 
-### 9. Sources and Prior Art Basis
+### 9. Sources and Prior Art Basis (AS-IS Disclaimer)
 
 - **Safety Theory:** Heinrich (1931) 300/29/1 — Philosophical motivation, Reason (1990) Swiss Cheese, Hollnagel Safety-II/Resilience, Defense in Depth, Fail-Safe, ALARP, Just Culture.
 - **Functional Safety:** ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e).
 - **Communication/Consensus:** RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032.
 - **Legal:** USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1.
+- **License:** CC BY 4.0 & DPL (Defensive Publication License v1.0).
 - **Verification and Drafting Tools:** Generic Generative AI Text Refinement & Structuring Tools (Conception by deundeuni).
+- **Target Design Benchmarks & AS-IS Disclaimer:** All quantitative metrics (durations, latencies, thresholds, etc.) specified in this document serve as Target Design Benchmarks for maximum survivability, whereas the 4-Tier combined structure and governance concepts constitute the core prior art. This document does not guarantee commercial operational completeness (Provided AS-IS), and practical industrial field deployment strictly requires multi-stage verification and empirical testing by professional engineers according to applicable safety standards.
 - **Trade Secrets:** eFPGA RTL, precision CAD, and firmware binaries are kept strictly confidential.
 
 ---
 
 ### 10. Revision History
 
-- **v2.2.1 (2026-09-17):**
-  - **Added Modesty & Non-Exclusivity Notice (Chapter 0):** Invoked the intent of POLYLINK-HUD Section 0.9 to specify public prior art status and modesty notice.
-  - **Generalized Technical Drafting Support & Legal Subject (Chapters 6, 8, 9):** Removed specific AI corporate names, applied v3.6 Appendix C standard wording, and reaffirmed the legal attribution of Sole Invention (deundeuni).
-  - **Refined Target Design Benchmarks Tone (Chapters 4-1, 4-6):** Clarified quantitative specs as target design benchmarks and refined directional expressions (aims for).
+- **v2.2.4 Revision (2026-09-18):**
+  - **Trademark Dispute Prevention & Technical Protocol Identifier Definition (Top Metadata, Chapter 7):** Clarified `soma-moa` as an open-source technical protocol identifier rather than a commercial trademark to preemptively block legal trademark disputes.
+- **v2.2.3 Revision (2026-09-18):**
+  - **Explicit Supplementation of Target Figures & AS-IS Disclaimer (Chapter 9):** Defined Target Design Benchmarks nature and added Provided AS-IS / mandatory field re-verification by professional engineers clause.
+- **v2.2.2 Revision (2026-09-18):**
+  - **Explicit Legal Definition of DPL (Defensive Publication License) (Chapters 7, 9):** Clarified the prohibition of exclusive patenting by citing entities and defined the scope of defensive prior art.
+  - **Domain Notation Lowercase Regularization (Top Metadata, Chapter 7):** Normalized technical domain to lowercase `somamoa.ai.kr` and harmonized brand capitalizations.
+  - **Added L2 FSM Cutoff Latch Metric to Specification Summary (Chapter 4-6):** Specified `E_STOP_LATCH <0.1ms` physical power cutoff metric to finalize the quantitative summary.
+- **v2.2.1 Revision (2026-09-17):**
+  - **Enacted Horizontal Multi-System Principle (Chapter 2):** Discarded vertical dominance hierarchies among machines, robots, and power systems, defining human productive assistance as the supreme constitutional rule.
+  - **Added Modesty & Non-Exclusivity Notice (Chapter 0):** Invoked POLYLINK-HUD Section 0.9 intent to specify public prior art status and modesty notice.
+  - **Generalized Technical Drafting Support & Legal Subject (Chapters 6, 8, 9):** Applied v3.6 Appendix C standard wording and reaffirmed Sole Invention (deundeuni) legal attribution.
+  - **Realigned FSM Terms and CBOR Payload (Chapters 4-1, 4-6):** Unified FSM `Brain-Override` notation and finalized CBOR L0 24B / L1 32B (RAM 3.2KB) numerical alignment.
 - **v2.2 Final (2026-08-27):** Finalized 4-tier survival architecture (L0~L3) and L2 FSM specification; applied sub-classifications (Enterprise/Daily/Personal).
 - **v2.0 (2026-08-25):** Declared defensive free publication of prior art; finalized the lowercase hyphenated name `soma-moa`.
 - **v1.0 / v0.1 (2026-08-24):** Initial governance architecture planning for SOMA and OSRP.
 
 ---
 origin: by deundeuni (soma-moa) - factory sample work & construction worker background  
-domain: somamoa.ai.kr / Somamoa.ai.kr | repo: github.com/soma-moa  
+repository: github.com/soma-moa  
 Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (Registered / Active)  
-prior art: 2026-08-25 | v2.2.1 Revision: 2026-09-17 | License: CC BY 4.0 & DPL
+prior art: 2026-08-25 | v2.2.4 Revision: 2026-09-18 | License: CC BY 4.0 & DPL
