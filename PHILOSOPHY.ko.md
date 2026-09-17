@@ -1,8 +1,8 @@
 # soma-moa : Design Philosophy & Prior Art Declaration
 > **original design:** `deundeuni (soma-moa)` | **repository:** `github.com/soma-moa`  
-> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.1 Revision:** 2026-09-17  
-> **domain:** `somamoa.ai.kr` | **License:** CC BY 4.0 & DPL  
-> **네이밍 사전 정의:** 오픈소스 프로토콜 및 코드베이스 표기는 `soma-moa`(소문자 하이픈), 서비스 브랜드 및 프로젝트 대표 명칭은 `Somamoa`를 사용하며 동일 정체성을 지닌다.  
+> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.4 Revision:** 2026-09-18  
+> **technical identifier:** `soma-moa` | **License:** CC BY 4.0 & DPL (Defensive Publication License)  
+> **네이밍 사전 정의:** 본 문서의 `soma-moa`(소문자 하이픈)는 상업적 상표(Trademark)가 아닌, 공익적 선행기술 공개 및 코드베이스 구분을 위한 오픈소스 기술 프로토콜 명칭으로 사용된다.  
 > **원본 조항:** 한국어 원문(PHILOSOPHY.ko.md)이 기준 원본이며, 번역본은 참고용이다.
 
 이 문서는 `soma-moa`가 왜 이렇게 설계되었는가에 대한 기록이다.  
@@ -40,7 +40,7 @@ soma-moa는 영어로 먼저 만들고 한국어로 번역한 기술이 아니�
 
 ---
 
-### 2. v1.0 SOMA - 몸을 입다
+### 2. v1.0 SOMA - 몸을 입다 & 0번 헌장
 
 **프로젝트명: SOMA (Symbiotic Operations & Machine Architecture)**
 
@@ -49,6 +49,8 @@ soma-moa는 영어로 먼저 만들고 한국어로 번역한 기술이 아니�
 - **설계 구조:** 하드웨어 섀시(바퀴, 4족, 휴머노이드)의 형태와 무관하게 상위에서 안전과 통제를 담당하는 거버넌스 레이어로 분리.
 - **0번 헌장(Axiom 0) 제정:**  
   *"로봇/AI는 부(Sub), 시스템 거버넌스는 주(Main)지만, 그 거버넌스조차도 인간의 주 작업에는 보조(Auxiliary)다."*
+- **수평적 다중 시스템 보조 원칙 (Horizontal Multi-System Principle):**  
+  다중 시스템의 수평적 관계에서 기계, 로봇, 전력 시스템을 포함한 모든 서브시스템은 상하 수직 지배 관계가 아닌, 시스템 내 인간의 생산적 활동을 보조하는 동등한 수평적 보조 수단으로 정의한다. (In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system.)
 
 ---
 
@@ -86,14 +88,14 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 - **L2 Governance:** Brain(Probabilistic) vs Governance(Deterministic) 물리 분리 + eFPGA 0.1ms Blocker + FSM
 - **L3 Social:** Quiet Assist Haptic 1x/2x + Anonymized Delta Logging PII 10초 파기
 
-**엣지 검증 파라미터 (Target Design Benchmarks):** CBOR L0 24B + L1 33B <50B, SDK 35.2KB <42KB, RAM 3.2KB <10MB, L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
+**엣지 검증 파라미터 (Target Design Benchmarks):** CBOR L0 24B / L1 32B (each <50B), SDK 35.2KB (<42KB), RAM 3.2KB (<10MB), L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
 
 **L2 FSM 전이 조건 및 역할 정의:**
 - **IDLE:** 정상 대기 상태
 - **MONITOR:** 엣지 센서 및 로그 실시간 감시
 - **VALIDATE(<0.02ms):** eFPGA 기반 결정론적 안전 규칙 검증
 - **PRELOCK(80%):** 위험 예측 확률 80% 도달 시 선제적 하드웨어 잠금 준비
-- **OVERRIDE:** AI 추론(Brain)의 이상 제어 시도를 L2 결정론적 거버넌스 및 인간 제어권이 물리적으로 즉시 무효화하고 우위권을 확보하는 단계
+- **Brain-Override:** AI 추론(Brain)의 이상 제어 시도를 L2 결정론적 거버넌스 및 인간 제어권이 물리적으로 즉시 무효화하고 우위권을 확보하는 단계
 - **E_STOP_LATCH(<0.1ms):** 0.1ms 이내 모터 전원 차단 래치 고정
 - **RECOVERY:** Ed25519 인간 서명 승인 없이는 복구를 불허하며 영구 래치 상태 유지
 
@@ -125,7 +127,7 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 실제 구현은 최신 안전 프레임워크에 기반하여 확장 적용한다:
 - **Safety-II / Resilience (Hollnagel):** 사고 예방뿐만 아니라 정상적으로 작동하는 9,999건의 상태를 안정적으로 유지하는 데 집중. Many as One과 Raft 기반 아키텍처로 구현.
-- **Just Culture + 익명 보고:** 자율적 보고 문화 조성을 위해 CBOR 24B 익명 로깅 + PII 10초 파기 + 경미한 항목 기록 최소화 체계 적용.
+- **Just Culture + 익명 보고:** 자율적 보고 문화 조성을 위해 CBOR 익명 로깅 + PII 10초 파기 + 경미한 항목 기록 최소화 체계 적용.
 - **스위스 치즈 모델의 능동화:** 방어선 누출 위험을 능동적으로 감지하여 백혈구 스캔, T-Reg 15%, Tri-State 절단을 통해 결함을 사전 완화 지향.
 - **정량 표준 정립:** 하인리히 비율 대신 ISO 13849-1 Cat 4 PL e / IEC 61508 SIL3 / GDPR 5(1)(e) 등 정식 규격 지표 원용.
 
@@ -154,8 +156,9 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 - **L0/L1 검증 지연시간 —** L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
 - **L1 Compute 합의 임계치 —** CCS Raft 70% 동의 / 100ms Role-Swapping
 - **L1 Compute 백프레셔 —** 패브릭 내부 85% 백프레셔 감지 시 자동 스로틀링
-- **L1 Compute 데이터 페이로드 —** CBOR 패킷 L0 24B + L1 33B (<50B 이내 제한)
+- **L1 Compute 데이터 페이로드 —** CBOR 패킷 L0 24B / L1 32B (each <50B 이내 제한)
 - **L2 Governance 검증 지연 —** eFPGA 결정론적 VALIDATE <0.02ms
+- **L2 Governance 차단 래치 —** E_STOP_LATCH <0.1ms 물리 전원 차단
 - **L2 Governance 예측 임계치 —** PRELOCK 80% 위험 확률 도달 시 선제 차단 준비
 - **L2 Governance 자가치유 제약 —** T-Reg 15% 제한 및 3회 실패 시 영구 격리
 - **L3 Social 신뢰도 임계치 —** Daily Vibe Search 신뢰도 90% 미만 시 추측 금지
@@ -200,12 +203,11 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 확정되었다.
 
 ---
 
-### 7. 실리보호 및 Somamoa 브랜드 확장 (Defensive Rights & Brand)
+### 7. 실리보호 및 기술 프로토콜 명칭 고지 (Defensive Rights & Technical Identifier)
 
-- **오픈소스 프로토콜 코드명:** `soma-moa`
-- **공식 프로젝트 및 브랜드명:** `Somamoa`
-- **공식 도메인:** `somamoa.ai.kr` / `Somamoa.ai.kr`
-- **실리보호 및 방어적 공개:** 본 프로토콜의 기술적 구성 및 사상은 선행기술로 무상 공개되며, 타 주체의 무단 특허화로부터 공공 영역의 범주를 넓혀 기술 생태계를 보호하는 것을 지향한다.
+- **기술 프로토콜 식별자:** `soma-moa` (소문자 하이픈 표기)
+- **기술 식별자 고지:** 본 문서의 `soma-moa`는 상업적 상표(Trademark)가 아닌, 공익적 선행기술 공개 및 코드베이스 식별을 위한 **오픈소스 기술 프로토콜 명칭(Technical Protocol Identifier)**으로 사용된다.
+- **DPL 방어적 공개 라이선스 선언:** 본 프로토콜은 CC BY 4.0 및 DPL(Defensive Publication License v1.0)에 따라 공개된다. DPL 조항에 따라 본 기술 구성 및 사상을 참조하거나 인용하는 타 주체는 해당 사상에 대해 배타적 특허 권리를 주장할 수 없으며, 제3자의 무단 특허 사유화 위험을 완화하고 공공 기술 영역을 방어적·보호적으로 확충함을 명시한다.
 
 ---
 
@@ -219,29 +221,40 @@ soma-moa는 이러한 현장 사유를 글로벌 규격 코드로 체계화한 �
 
 ---
 
-### 9. 출처 및 선행기술 근거 (Sources)
+### 9. 출처 및 선행기술 근거 (Sources & AS-IS Disclaimer)
 
 - **안전 이론:** Heinrich (1931) 300/29/1 — 철학적 동기, Reason (1990) Swiss Cheese, Hollnagel Safety-II/Resilience, Defense in Depth, Fail-Safe, ALARP, Just Culture
 - **기능안전:** ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e)
 - **통신/합의:** RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032
 - **법률:** USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1
+- **라이선스:** CC BY 4.0 & DPL (Defensive Publication License v1.0)
 - **검증 및 문서 작성 도구:** Generic Generative AI Text Refinement & Structuring Tools (Conception by deundeuni)
+- **수치 가이드라인 선언 및 상업적 보증 불용 고지 (Target Figures & AS-IS Disclaimer):** 본 문서에 기재된 모든 정량 수치(시간, 지연, 임계치 등)는 최고 생존성을 위한 목표치 가이드라인(Target Design Benchmarks)에 해당하며, 4-Tier 결합 구조 및 거버넌스 사상이 핵심 선행기술이다. 본 문서는 상업적 동작 완전성을 보증하지 않으며(Provided AS-IS), 실제 산업 현장 구현 및 적용 시 관련 안전 표준에 따른 전문 엔지니어의 현장 다중 재검증 및 실증 절차가 필수적으로 요구된다.
 - **영업비밀:** eFPGA RTL, 정밀 CAD, 펌웨어 바이너리는 비공개 유지
 
 ---
 
 ### 10. 변경 이력 및 정합화 패치 기록 (Revision History)
 
-- **v2.2.1 (2026-09-17):**
+- **v2.2.4 Revision (2026-09-18):**
+  - **상표권 분쟁 방지 및 기술 프로토콜 식별자 정의 보완 (상단 메타데이터, 7장):** `soma-moa`를 상업적 상표가 아닌 공익적 선행기술 및 오픈소스 코드베이스 구분을 위한 기술 프로토콜 식별자(Technical Protocol Identifier)로 명확히 단정하여 법적 상표 분쟁 여지 선제 차단.
+- **v2.2.3 Revision (2026-09-18):**
+  - **수치 가이드라인 및 상업적 보증 불용 고지 명시적 보완 (9장):** Target Design Benchmarks 성격 지정 및 Provided AS-IS / 현장 전문 엔지니어 재검증 필수 조항 추가.
+- **v2.2.2 Revision (2026-09-18):**
+  - **DPL (Defensive Publication License) 법적 정의 명시 (7장, 9장):** 참조 주체의 무단 특허 사유화 금지 및 방어적 선행기술 범위 명확화.
+  - **도메인 표기 소문자 정규화 (상단 메타데이터, 7장):** 기술 도메인을 소문자 `somamoa.ai.kr`로 정속화하고 브랜드 표기 대문자 혼용 정합 정리.
+  - **4-6장 스펙 요약 L2 FSM 차단 래치 수치 추가 (4-6장):** `E_STOP_LATCH <0.1ms` 물리 전원 차단 수치 명시로 정량 요약표 완결.
+- **v2.2.1 Revision (2026-09-17):**
+  - **수평적 다중 시스템 보조 원칙 제정 (2장):** 기계, 로봇, 전력 시스템 간 수직 지배 구조를 지양하고 인간 생산 활동 보조를 최상위 헌법으로 정의.
   - **독립 선행 연구 및 무독점 고지 신설 (0장):** POLYLINK-HUD 0.9항 취지를 원용하여 공공 선행기술화 및 겸양 고지 명시.
   - **기술 작성 지원 및 법리적 주체 명시 일반화 (6장, 8장, 9장):** 특정 AI 기업 실명 제거 및 v3.6 Appendix C 표준 문구 적용, Sole Invention(deundeuni) 법리적 귀속 재확인.
-  - **Target Design Benchmarks 톤 보정 (4-1장, 4-6장):** 정량 스펙을 목표 설계 벤치마크로 명확히 하고 지향적 표현 정비.
+  - **FSM 용어 및 CBOR 페이로드 재정렬 (4-1장, 4-6장):** FSM `Brain-Override` 표기 통일 및 CBOR L0 24B / L1 32B (RAM 3.2KB) 수치 모순 재검증 완결.
 - **v2.2 Final (2026-08-27):** 4층 생존 아키텍처(L0~L3) 및 L2 FSM 명세 확정, 소분류(기업/일상/개인) 적용.
 - **v2.0 (2026-08-25):** 선행기술 방어적 무상 공개 선언, `soma-moa` 소문자 하이픈 명칭 확정.
 - **v1.0 / v0.1 (2026-08-24):** SOMA 및 OSRP 초기 거버넌스 아키텍처 기획.
 
 ---
 origin: by deundeuni (soma-moa) - factory sample work & construction worker background  
-domain: somamoa.ai.kr / Somamoa.ai.kr | repo: github.com/soma-moa  
+repository: github.com/soma-moa  
 Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (등재 완료 / Active)  
-prior art: 2026-08-25 | v2.2.1 Revision: 2026-09-17 | License: CC BY 4.0 & DPL
+prior art: 2026-08-25 | v2.2.4 Revision: 2026-09-18 | License: CC BY 4.0 & DPL
