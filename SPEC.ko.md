@@ -1,5 +1,6 @@
 # soma-moa : Spec v2.2 Final
-> **domain:** `somamoa.ai.kr` | **repo:** `github.com/soma-moa` | **v2.2 Final:** 2026-08-27  
+> **domain:** `somamoa.ai.kr` | **repo:** `github.com/soma-moa`  
+> **Initial Record Date:** 2026-08-27 | **Last Revised:** 2026-09-17 | **v2.2 Final (v2.2.1 Patch)**  
 > **Status:** English/Korean Technical Standard | **Authoritative:** `PHILOSOPHY.ko.md`  
 > **License:** CC BY 4.0 & DPL | **Origin:** by deundeuni (soma-moa)  
 > **원본 조항:** 한국어 원문(`PHILOSOPHY.ko.md`)이 기준 원본이며, 번역본은 참고용이다.
@@ -13,13 +14,13 @@ $$\text{[Brain: LLM/VLM Probabilistic]} \longrightarrow \text{[Governance: soma-
 - **L0 Physical —** CWP Battery-Swap (60T/61T Diff) + V-Home Self-Align $\pm 5\text{mm}$ + $0.1\text{ms}$ HW Intercept E-Stop (Motor EN PIN LOW 차단 제어)
 - **L1 Compute —** Chiplet-APU Many as One Dual-Redundant + CCS $70\% / 100\text{ms}$ Raft Role-Swapping + 갓길 3중 관제 (Token Bucket + T-Reg $15\%$ + Tri-State)
 - **L2 Governance —** Brain vs Governance 물리 분리 + eFPGA $0.1\text{ms}$ Blocker + FSM
-  $$\text{IDLE} \longrightarrow \text{MONITOR} \longrightarrow \text{VALIDATE (<0.02ms)} \longrightarrow \text{PRELOCK (80\%)} \longrightarrow \text{OVERRIDE} \longrightarrow \text{E\_STOP\_LATCH (<0.1ms)} \longrightarrow \text{RECOVERY}$$
+  $$\text{IDLE} \longrightarrow \text{MONITOR} \longrightarrow \text{VALIDATE (<0.02ms)} \longrightarrow \text{PRELOCK (80\%)} \longrightarrow \text{Brain-Override} \longrightarrow \text{E\_STOP\_LATCH (<0.1ms)} \longrightarrow \text{RECOVERY}$$
 - **L3 Social —** Quiet Assist 1x/2x Haptic + Anonymized Delta Logging PII $10\text{s}$ 자동 삭제 지향 + Just Culture
 
 #### 1.1 엣지 정량 파라미터 및 제약 조건
-- **CBOR 데이터 페이로드 —** L0 24B (PII 제거) + L1 33B (8B token) $< 50\text{B}$ Array Encoding ($0.01\text{mm}$ 양자화)
+- **CBOR 데이터 페이로드 —** L0 24B (PII 제거) / L1 32B (8B token 포함), each $< 50\text{B}$ Array Encoding ($0.01\text{mm}$ 양자화)
 - **SDK 제약 —** $35.2\text{KB} < 42\text{KB}$ Zero-Dep C/Rust
-- **RAM 메모리 —** $3.2\text{KB}$ ($100 \times 33\text{B}$, $10\text{s}$ 휘발성 버퍼)
+- **RAM 메모리 —** $3.2\text{KB}$ ($100 \times 32\text{B}$, $10\text{s}$ 휘발성 버퍼)
 - **검증 지연시간 —** L0 Sync $0.1\text{ms}$ HMAC HW Bypass / L1 Async $2\sim5\text{ms}$ Ed25519
 
 ---
@@ -54,7 +55,7 @@ $$\text{인간 에스컬레이션 (L3)} \longrightarrow \text{최후의 수단�
 
 - **L0 자체 해결 —** V-Home $\pm 5\text{mm}$ 물리적 오차 정밀 흡수 재시도, CWP 차동(60T/61T Diff) 저충격 재도킹, $0.1\text{ms}$ E-Stop 후 자체 재인가 시도.
 - **L1 자체 해결 —** 큐 $85\%$ 백프레셔 감지 시 스로틀링, CCS $70\%$ Raft $100\text{ms}$ 재선출, 백혈구 격리 버퍼, T-Reg $15\%$ 자원 억제, Tri-State 영구 격리.
-- **L2 자체 해결 —** eFPGA $0.02\text{ms}$ VALIDATE $\rightarrow$ $80\%$ PRELOCK $\rightarrow$ OVERRIDE $\rightarrow$ E_STOP_LATCH 내부 래치 제어. 클라우드 로그 없이 내부 CBOR 데이터만 보존.
+- **L2 자체 해결 —** eFPGA $0.02\text{ms}$ VALIDATE $\rightarrow$ $80\%$ PRELOCK $\rightarrow$ Brain-Override $\rightarrow$ E_STOP_LATCH 내부 래치 제어. 클라우드 로그 없이 내부 CBOR 데이터만 보존.
 
 ---
 
@@ -67,7 +68,7 @@ $$\text{인간 에스컬레이션 (L3)} \longrightarrow \text{최후의 수단�
 
 ### 3. 보안 및 자가치유 (Security & Self-Healing)
 
-Proof-of-Clearance (Ed25519), Cloud-Sign / Edge-Verify, CBOR L0 24B + L1 33B $< 50\text{B}$ Array Encoding ($0.01\text{mm}$ 양자화), SDK $35.2\text{KB} < 42\text{KB}$ Zero-Dep C/Rust, RAM $3.2\text{KB}$ ($10\text{s}$ 휘발성), L0 Sync $0.1\text{ms}$ HMAC HW Bypass / L1 Async $2\sim5\text{ms}$ Ed25519.
+Proof-of-Clearance (Ed25519), Cloud-Sign / Edge-Verify, CBOR L0 24B / L1 32B (each $< 50\text{B}$) Array Encoding ($0.01\text{mm}$ 양자화), SDK $35.2\text{KB} < 42\text{KB}$ Zero-Dep C/Rust, RAM $3.2\text{KB}$ ($100 \times 32\text{B}$, $10\text{s}$ 휘발성 버퍼), L0 Sync $0.1\text{ms}$ HMAC HW Bypass / L1 Async $2\sim5\text{ms}$ Ed25519.
 
 #### 3.1 APK 보안 및 무결성
 - **서명 검증 및 무결성 제어 —** 전자서명 미보유 시 무결성 검증 실패로 애플리케이션 실행을 차단 제어한다.
@@ -122,13 +123,13 @@ $$\text{L1 (BLE/MQTT-SN 햅틱 1x/2x)} \longrightarrow \text{L2 (Lock \& Telemet
 
 본 프로토콜은 1인 설계자(`deundeuni`)의 공장 기계 샘플 작업 및 건설 현장 노동 경험에서 도출된 일상적 사유에서 출발했다.
 
-이 설계 체계화 과정에서 Transformer(2017), TensorFlow(2015), Gemma(2024), Llama(2023~), Claude(2023~) 등 개방된 기반 모델 및 AI 도구를 검증 도구로 활용했다. Meta AI, Gemini, Claude는 기술 검증 및 교차 검토 도구이며, 본 기술의 핵심 착상(Conception) 및 독자적 아키텍처 설계는 `deundeuni`에게 있다.
+이 설계 체계화 과정에서 개방형 AI 모델(대규모 언어 모델 등)을 기술 교차 검증, 수치 검수 및 표준 서식 구조화 보조 도구(Drafting & Verification Tool)로 활용했다. 개방형 AI 모델은 문서화 보조 수단이며, 본 기술의 핵심 착상(Conception) 및 독자적 아키텍처 설계 주권은 `deundeuni`에게 있다 (USPTO 2024 AI Inventorship Guidance 준수).
 
 영업비밀인 eFPGA RTL 코드, 정밀 CAD 도면, 펌웨어 바이너리 소스는 비공개 유지를 원칙으로 한다.
 
 ---
 
-### 9. 선행기술 등록 및 비의도적 생략 고지 (Prior Art & Disclaimer)
+### 9. 선행기술 등록 및 수치 가이드라인 면책 고지 (Prior Art & Disclaimer)
 
 - **선행기술 글로벌 레지스트리 등재 명세 (Zenodo DOIs / GitHub Repositories) —**
   - `deundeuni/CWP-Battery-Swap` (DOI: `10.5281/zenodo.22373538`)
@@ -139,8 +140,10 @@ $$\text{L1 (BLE/MQTT-SN 햅틱 1x/2x)} \longrightarrow \text{L2 (Lock \& Telemet
   - `deundeuni/chiplet-apu-multi-system-survival-architecture` (DOI: `10.5281/zenodo.22374987`)
   *(상기 CERN Zenodo / DataCite 글로벌 학술 레지스트리 등재 완료 / Active)*
 
+- **수치 가이드라인 선언 및 상업적 보증 불용 고지 (Target Figures & AS-IS Disclaimer) —** 본 명세서에 기재된 모든 정량 수치(시간, 응답 지연, 임계치, 용량 파라미터 등)는 시스템 최고 생존력을 지향하는 **목표치 가이드라인(Target Figures)**이며 상업적 동작 완전성을 보증하지 않는다 (Provided AS-IS). 실제 산업 현장 구현 시 관련 안전 표준 및 현장 조건에 맞춘 전문 엔지니어의 재검증이 필수적으로 요구된다.
+
 - **비의도적 생략 및 예시적 미한정 고지 —** 명세서상 인용 표준 및 관련 저장소 목록은 이해를 돕기 위한 예시적 서술이며 전면적 한정을 의미하지 않는다. 작성자의 주관적 한계로 누락된 파생 개정 규격 및 균등 공지기술은 본 방어적 공개 백서의 선행기술 포괄 범주에 포함된 것으로 간주한다.
 
 ---
 origin: by deundeuni (soma-moa) | domain: somamoa.ai.kr / Somamoa.ai.kr | repo: github.com/soma-moa
-v2.2 Final: 2026-08-27 | PHILOSOPHY.ko.md is authoritative | License: CC BY 4.0 & DPL
+Initial: 2026-08-27 | Revised: 2026-09-17 | v2.2 Final (v2.2.1 Patch) | PHILOSOPHY.ko.md is authoritative | License: CC BY 4.0 & DPL
