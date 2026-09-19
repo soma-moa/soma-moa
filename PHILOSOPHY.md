@@ -1,6 +1,6 @@
 # soma-moa : Design Philosophy & Prior Art Declaration
 > **original design:** `deundeuni (soma-moa)` | **repository:** `github.com/soma-moa`  
-> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.7 Defensive Tone Revision:** 2026-09-18  
+> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.9 Graduated Autonomy Principle & Defensive Tone Revision:** 2026-09-19  
 > **technical identifier:** `soma-moa` | **License:** CC BY 4.0 & DPL (Defensive Publication License)  
 > **Naming Pre-definition:** The term `soma-moa` (lowercase hyphenated) in this document is used not as a commercial trademark, but as an open-source technical protocol identifier for prior art disclosure and codebase distinction.  
 > **Master Original Clause:** The Korean original text (PHILOSOPHY.ko.md) serves as the primary master source, and translations (including PHILOSOPHY.md) are for reference purposes only.
@@ -24,6 +24,9 @@ This is the identity of soma-moa and the starting point of its design.
 
 **Modesty & Non-Exclusivity Notice (독립적 선행 연구 및 무독점 고지):**  
 Although this protocol was conceived from the individual designer's daily life, field experience, and reasoning, the possibility that similar technical ideas or concepts were independently researched earlier by other researchers is not excluded. This document is disclosed free of charge as public Prior Art to prevent exclusive monopolization by specific entities and to allow anyone to freely reference and develop it.
+
+**Barnacle Archetype Notice (생체모방 원형 고지):**  
+It is explicitly declared that the barnacle biomimetic structure consistently appearing throughout this ecosystem (connector contacts, ground structures, marine buoys, etc.) is not a mere casual preference or repetition, but was adopted and cited as the initial biological archetype for the core soma-moa governance philosophy: "rather than enduring harsh environments as isolated individuals, entities lock together in layers and support the base to survive together."
 
 ---
 
@@ -50,7 +53,7 @@ The governance expanded in scale when virtual AI assumed a physical body (Greek 
 - **Enactment of Axiom 0 (0번 헌장):**  
   *"Robots/AI are Sub, System Governance is Main, but even that Governance is Auxiliary to human primary work."*
 - **Horizontal Multi-System Principle (수평적 다중 시스템 보조 원칙):**  
-  In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system, avoiding vertical hierarchical dominance. (In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system.)
+  In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system, avoiding vertical hierarchical dominance.
 - **Instance of Inter-Entity Task Handover & Work Continuity (수평적 역할 이행 및 작업 연속성 실시예):**  
   When physical constraint situations occur among multi-robot or distributed terminal entities (e.g., Robot A and Robot B) regarding battery level, proximity distance, or compute performance, the act of transferring task initiative is performed for the purpose of **"uninterrupted completion of human-instructed productive activities"**, rather than autonomous negotiation based on individual machine interests. Each subsystem operates as an equal auxiliary subject mutually compensating for physical and computational weaknesses, aiming to connect to the implementation of an isomorphic together-survival governance logic based on L1/L2 whitepapers to secure overall system survival.
 
@@ -91,6 +94,9 @@ Building upon v2.0, the baseline system structure was systematized in v2.2.
 - **L3 Social Tier:** Quiet Assist Haptic 1x/2x + Anonymized Delta Logging PII 10-second destruction
 
 **Edge Design Benchmarks (Target Design Benchmarks):** CBOR L0 24B / L1 32B (each restricted within <50B limit), SDK 35.2KB (<42KB), RAM 3.2KB (<10KB), L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
+
+**Graduated Autonomy Principle (FSM 단계적 권한 위임 원칙):**  
+Reflecting the realistic limitation that humans cannot directly intervene in every anomalous situation, the L2 FSM adopts a ladder structure that delegates autonomy in stages. Following PRELOCK, autonomous cooperation among peer entities (HORIZONTAL_HANDOVER) is attempted first; only when this fails to resolve anomalous AI inference (Brain-Override) or physical hazards (E_STOP_LATCH) does the system aim for step-by-step escalation to higher control and human intervention. This serves as the core design rationale for simultaneously satisfying both the Quiet Assist philosophy (Section 4-2) of minimizing human management fatigue and Axiom 0 of guaranteeing ultimate human control authority.
 
 **L2 FSM State Transition Conditions & Role Definitions:**
 - **IDLE (대기):** Normal standby state
@@ -242,6 +248,10 @@ In this systemization process, Transformer architectures and open technical foun
 
 ### 10. Revision History & Alignment Patch Log (변경 이력 및 정합화 패치 기록)
 
+- **v2.2.9 Revision (2026-09-19):**
+  - **Enacted Graduated Autonomy Principle (Section 4-1):** Systematized the autonomous ladder structure as the rationale for reconciling human fatigue minimization (Quiet Assist) with ultimate human control (Axiom 0), bolstering the deterministic design rationale for L2 FSM state transition sequences.
+- **v2.2.8 Revision (2026-09-19):**
+  - **Added Barnacle Archetype Notice (Section 0):** Explicitly declared that the barnacle biomimetic structure appearing throughout the ecosystem is an intended biological motif for "together-survival" rather than casual repetition, reinforcing the philosophical defense and consistency of prior art.
 - **v2.2.7 Revision (2026-09-18):**
   - **Defensive Tone Refinement & Shoulder Lane Terminology Patch:** Replaced over-assertive/definitive terms throughout the text with defensive phrasing. Refined L1 Shoulder path term to `Shoulder Lane (Auxiliary Path) 3-tier Control` in 1:1 alignment with Korean master text.
 - **v2.2.6 Revision (2026-09-18):**
@@ -275,4 +285,4 @@ In this systemization process, Transformer architectures and open technical foun
 origin: by deundeuni (soma-moa) - factory sample work & construction worker background  
 repository: github.com/soma-moa  
 Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (Active)  
-prior art: 2026-08-25 | v2.2.7 Revision: 2026-09-18 | License: CC BY 4.0 & DPL
+prior art: 2026-08-25 | v2.2.9 Revision: 2026-09-19 | License: CC BY 4.0 & DPL
