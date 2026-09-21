@@ -1,288 +1,188 @@
-# soma-moa : Design Philosophy & Prior Art Declaration
-> **original design:** `deundeuni (soma-moa)` | **repository:** `github.com/soma-moa`  
-> **initial record date:** 2026-08-24 | **prior art declaration:** 2026-08-25 | **v2.2.9 Graduated Autonomy Principle & Defensive Tone Revision:** 2026-09-19  
-> **technical identifier:** `soma-moa` | **License:** CC BY 4.0 & DPL (Defensive Publication License)  
-> **Naming Pre-definition:** The term `soma-moa` (lowercase hyphenated) in this document is used not as a commercial trademark, but as an open-source technical protocol identifier for prior art disclosure and codebase distinction.  
-> **Master Original Clause:** The Korean original text (PHILOSOPHY.ko.md) serves as the primary master source, and translations (including PHILOSOPHY.md) are for reference purposes only.
 
-This document is a record of why `soma-moa` was designed this way.  
-It is a trace of process rather than result, of reasoning rather than specs.
-
----
-
-### 0. Design Started in Native Language (모국어로 시작한 설계)
-
-soma-moa was not built in English first and then translated into Korean.  
-It began with knowledge accumulated in daily life—handling various machines for sample work in factories and working as a construction laborer. With recent encounters with AI, it started from the thought, "Could I make structured documentation out of this experience?"
-
-It is a protocol conceived deeply in Korean and proven through globally compliant code.  
-Therefore, `moa (모아)` is not a nickname, but its true name.
-
-While the English words "gather" or "collect" are translated as "모은다", the warmth of "embracing and gathering fragmented error logs and distributed terminals into one place" is contained uniquely in the Korean word 'moa'.
-
-This is the identity of soma-moa and the starting point of its design.
-
-**Modesty & Non-Exclusivity Notice (독립적 선행 연구 및 무독점 고지):**  
-Although this protocol was conceived from the individual designer's daily life, field experience, and reasoning, the possibility that similar technical ideas or concepts were independently researched earlier by other researchers is not excluded. This document is disclosed free of charge as public Prior Art to prevent exclusive monopolization by specific entities and to allow anyone to freely reference and develop it.
-
-**Barnacle Archetype Notice (생체모방 원형 고지):**  
-It is explicitly declared that the barnacle biomimetic structure consistently appearing throughout this ecosystem (connector contacts, ground structures, marine buoys, etc.) is not a mere casual preference or repetition, but was adopted and cited as the initial biological archetype for the core soma-moa governance philosophy: "rather than enduring harsh environments as isolated individuals, entities lock together in layers and support the base to survive together."
-
----
-
-### 1. v0.1 OSRP - Days of Pure Skeleton
-
-**Project Name: OSRP (Open Symbiotic Routine Protocol / 개방형 유기적 루틴 프로토콜)**
-
-Initially, only the basic skeleton was established:
-- **Zero Trust Security:** Only approved networks are allowed to connect, and sensor data is directed strictly to internal networks.
-- **3-Stage Escalation:** WebRTC video call -> Telemetry log -> Direct human dispatch.
-- **Human Final Control:** Restrict situations where robots make autonomous decisions and guarantee human intervention rights.
-
-The word 'Routine' was discarded because it appeared like a simple scheduler, lacking intuitive engineering clarity.
-
----
-
-### 2. v1.0 SOMA - Wearing the Physical Form & Axiom 0
-
-**Project Name: SOMA (Symbiotic Operations & Machine Architecture / 공생적 운용 및 기계 아키텍처)**
-
-The governance expanded in scale when virtual AI assumed a physical body (Greek *Soma*) in reality.
-
-- **Architectural Structure:** Separated into an upper governance layer handling safety and control regardless of the hardware chassis form factor (wheeled, quadrupedal, humanoid).
-- **Enactment of Axiom 0 (0번 헌장):**  
-  *"Robots/AI are Sub, System Governance is Main, but even that Governance is Auxiliary to human primary work."*
-- **Horizontal Multi-System Principle (수평적 다중 시스템 보조 원칙):**  
-  In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system, avoiding vertical hierarchical dominance.
-- **Instance of Inter-Entity Task Handover & Work Continuity (수평적 역할 이행 및 작업 연속성 실시예):**  
-  When physical constraint situations occur among multi-robot or distributed terminal entities (e.g., Robot A and Robot B) regarding battery level, proximity distance, or compute performance, the act of transferring task initiative is performed for the purpose of **"uninterrupted completion of human-instructed productive activities"**, rather than autonomous negotiation based on individual machine interests. Each subsystem operates as an equal auxiliary subject mutually compensating for physical and computational weaknesses, aiming to connect to the implementation of an isomorphic together-survival governance logic based on L1/L2 whitepapers to secure overall system survival.
-
----
-
-### 3. v1.5 Naming Exploration - Standards After 20 Names
-
-In addition to the English name SOMA, over 20 names were reviewed to find an intuitive and easy-to-pronounce identifier.
-
-- **Bodeum, Gyeol, Irum** — Pronunciation felt somewhat heavy.
-- **Nuri, Miso, Uri** — Technical identity was not clearly communicated.
-- **Gori, Dari, Sai** — Scope was too limited to encompass an N:1 collecting platform.
-
-**3 Established Criteria:**
-1. Must be pronounceable within 0.1 seconds
-2. Operational structure must be visualized upon hearing it
-3. Must contain scalability to gather distributed terminals into one
-
----
-
-### 4. v2.0 soma-moa - Systematization of Name & Notation
-
-**Official Name: soma-moa by deundeuni**
-
-- **moa (모아):** The essence of gathering scattered error logs and standards into one place.
-- **Linguistic Symmetry:** Visual and auditory rhythm alignment between S O M A (ㅗㅏ) - m o a (ㅗㅏ).
-- **Lowercase Notation:** Formatted as lowercase hyphenated `soma-moa` to reflect its identity as an open-source protocol easily referenced by developers in codebases.
-
----
-
-### 4-1. v2.2 Baseline Structure - 4-Tier Survival Architecture & L2 Finite State Machine (FSM) Specification
-
-Building upon v2.0, the baseline system structure was systematized in v2.2.
-
-- **L0 Physical Tier:** CWP (Contactless Wireless Power / 무선 전력 전송 및 차동 감속 도킹) Battery-Swap + V-Home (V-groove Homing / V-홈 자율정렬 모듈, ±5mm alignment) Self-Align + 0.1ms Hardware Intercept E-Stop (aiming for Motor EN PIN LOW cutoff control)
-- **L1 Compute Tier:** Chiplet-APU Many as One Dual-Redundant + CCS 70%/100ms Raft Role-Swapping + Shoulder Lane (Auxiliary Path) 3-tier Control
-- **L2 Governance Tier:** Brain (Probabilistic) vs Governance (Deterministic) physical separation + eFPGA 0.1ms Blocker + Finite State Machine (FSM)
-- **L3 Social Tier:** Quiet Assist Haptic 1x/2x + Anonymized Delta Logging PII 10-second destruction
-
-**Edge Design Benchmarks (Target Design Benchmarks):** CBOR L0 24B / L1 32B (each restricted within <50B limit), SDK 35.2KB (<42KB), RAM 3.2KB (<10KB), L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
-
-**Graduated Autonomy Principle (FSM 단계적 권한 위임 원칙):**  
-Reflecting the realistic limitation that humans cannot directly intervene in every anomalous situation, the L2 FSM adopts a ladder structure that delegates autonomy in stages. Following PRELOCK, autonomous cooperation among peer entities (HORIZONTAL_HANDOVER) is attempted first; only when this fails to resolve anomalous AI inference (Brain-Override) or physical hazards (E_STOP_LATCH) does the system aim for step-by-step escalation to higher control and human intervention. This serves as the core design rationale for simultaneously satisfying both the Quiet Assist philosophy (Section 4-2) of minimizing human management fatigue and Axiom 0 of guaranteeing ultimate human control authority.
-
-**L2 FSM State Transition Conditions & Role Definitions:**
-- **IDLE (대기):** Normal standby state
-- **MONITOR (감시):** Real-time monitoring of edge sensors and telemetry logs
-- **VALIDATE (검증, <0.02ms):** eFPGA-based deterministic safety rule validation
-- **PRELOCK (선제 잠금, 80%):** Preemptive hardware locking preparation upon reaching 80% hazard probability
-- **HORIZONTAL_HANDOVER (수평 이양):** Preemptive task initiative transfer to adjacent entity upon detecting battery, distance, or compute limits (Soft Reset domain requiring no human signature, aiming for human task continuity)
-- **Brain-Override (Brain 우위 무효화):** Stage where L2 deterministic governance and human control physically override and nullify anomalous AI inference (Brain) control attempts
-- **E_STOP_LATCH (비상 정지 래치, <0.1ms):** Motor power cutoff latching within 0.1ms
-- **RECOVERY (복구):** Permanent latch state maintained; recovery prohibited without Ed25519 human signature approval
-
----
-
-### 4-2. v2.2 Expansion - From Everyday Life to On-Site
-
-- **3 AS Services:** Remote/OTA, Dispatch, Resident (Hospital / Factory / Department Store / Logistics / Repair Center / Food Court)
-- **Personal Customization:** Medication / Task / Health Routines, Device Repair History / Warranty, Diet / Allergies
-- **Extended Search:** Library Librarian (searching books by cover / feel / summary) + Music Search (searching by humming / vibe / lyrics)
-
----
-
-### 4-3. v2.2 Sub-classification - Enterprise / Daily / Personal
-
-While `moa` gathers everything, application must be categorized to remain lightweight. Thus, it was divided into 3 sub-categories.
-
-- **Enterprise (기업용):** Operating environments where operational continuity is critical. Factories, logistics, hospitals, AS centers. L0 0.1ms cutoff control aiming + L1 Many as One + L2 deterministic execution focus. Guarantees final human judgment.
-- **Daily (일상용):** Environments requiring exploration and assistance. Food courts, department store service counters, libraries, music. Vibe Search + L3 escalation focus. Avoids definitive speculation when confidence is below 90% and performs autonomous auxiliary inquiry.
-- **Personal (개인용):** Environments respecting personal privacy. Medication / task / health, diet / allergy, repair history. PII 10-second destruction + Haptic 1x/2x + aiming to minimize unnecessary logging.
-
-Connecting all while distributing load is the core principle of `Auxiliary (보조)`.
-
----
-
-### 4-4. Succession of Safety Philosophy - Heinrich as Motivation Only
-
-Heinrich 300:29:1 is a philosophical foundation enacted in 1931. Rather than limiting the ratio to absolute numbers, it is cited as a motivation for why preventive measures must be gathered.
-
-Actual implementation is expanded and applied based on modern safety frameworks:
-- **Safety-II / Resilience (Hollnagel):** Focuses on maintaining 9,999 normal operating conditions safely rather than solely preventing accidents. Implemented via Many as One and Raft-based architecture.
-- **Just Culture & Anonymous Reporting:** CBOR anonymous logging + PII 10-second destruction + minor item logging minimization applied to foster autonomous reporting culture.
-- **Activating Swiss Cheese Model:** Actively detecting defense line leakage risks to achieve preemptive defect mitigation via Leukocyte Scan, T-Reg 15%, and Tri-State disconnects.
-- **Establishing Quantitative Standards:** Citing formal standard parameters such as ISO 13849-1 Cat 4 PL e / IEC 61508 SIL3 / GDPR Article 5(1)(e) instead of Heinrich ratios.
-
-> [S-01] Heinrich 1931 is cited as historical and philosophical motivation; actual implementation relies on Safety-II, Just Culture, deterministic control, and anonymous near-miss reporting systems.
-
----
-
-### 4-5. Organic Interlock & Preemptive Action Philosophy
-
-Aims to complete preemptive measures within the field through organic interlocking:
-
-- At L0, V-Home precisely absorbs physical errors within ±5mm range
-- At L1, aims for internal fabric resolution via 70% Raft re-election, 85% backpressure, and Leukocyte isolation
-- At L2, eFPGA performs lock control within 0.02ms VALIDATE and logs internally
-
-Only when self-resolution is unattainable does L3 issue Haptic 1x/2x notifications followed by WebRTC human manager interlock, preserving technician dignity through final reservation of human judgment.
-
----
-
-### 4-6. System Specification Summary (정량 핵심 스펙 명세)
-
-The overall quantitative parameter specifications (Target Design Benchmarks) for each tier, provided for prior art comparison and review alignment, are as follows:
-
-- **L0 Physical Latency —** 0.1ms Hardware E-Stop cutoff control aiming (Motor EN PIN LOW)
-- **L0 Physical Error Absorption —** V-Home Self-Align ±5mm precision absorption
-- **L0/L1 Verification Latency —** L0 Sync 0.1ms HMAC HW Bypass / L1 Async 2~5ms Ed25519
-- **L1 Compute Consensus Threshold —** CCS Raft 70% consensus / 100ms Role-Swapping
-- **L1 Compute Backpressure —** Automatic throttling upon detecting 85% internal fabric backpressure
-- **L1 Compute Data Payload —** CBOR packet L0 24B / L1 32B (each restricted within <50B limit)
-- **L2 Governance Verification Latency —** eFPGA deterministic VALIDATE <0.02ms
-- **L2 Governance Cutoff Latch —** E_STOP_LATCH <0.1ms physical power disconnect
-- **L2 Governance Prediction Threshold —** PRELOCK 80% hazard probability preemptive cutoff prep
-- **L2 Governance Horizontal Handover —** HORIZONTAL_HANDOVER entity resource and task handover upon detecting constraint limits
-- **L2 Governance Self-Healing Constraint —** T-Reg 15% limit and permanent isolation after 3 failures
-- **L3 Social Confidence Threshold —** Daily Vibe Search avoids definitive speculation under 90% confidence
-- **L3 Social PII Destruction Period —** Anonymized Delta Logging destroyed within 10 seconds
-- **Edge Embedded Resource Constraints —** SDK size 35.2KB (<42KB), RAM 3.2KB (<10KB)
-
----
-
-### 5. Auxiliary Governance & Prior Art Declaration (보조 거버넌스 및 선행기술 공개)
-
-**Disclosure Purpose (2026-08-25):** This document discloses the minimum safety auxiliary specifications as prior art for human-AI-robot coexistence to mitigate exclusive patent monopolization risks by specific entities and establish it as public technology accessible to all.
-
-- **Premise of Coexistence:** "Smile on the way to work, smile on the way home"
-- **Principle of Auxiliary:** Governance performs a lightweight auxiliary role without interfering with primary work
-- **Deterministic Control:** Aiming for power bus cutoff control via L0 blocker even during anomalous AI behaviors
-
----
-
-### 5-1. Technician Dignity & Quiet Assist Protocol (기술자 존엄 및 조용한 보조 프로토콜)
-
-- **Quiet Assistance:** Utilizes haptic 1x/2x vibration notifications perceptible only to the worker instead of excessive alarm sounds
-- **Consideration Without Logging:** Eases psychological burden by automatically deleting minor simple mistakes after 10 seconds while maintaining logs for physical hazard items
-- **Technician Treatment Principle:** Establishes value as an auxiliary partner rather than a surveillance tool
-
-**Summary:** Physical safety is explicitly secured via L0 cutoff control, while social safety is gently implemented through vibration alerts and autonomous deletion clauses.
-
----
-
-### 5-2. Self-Healing Reset Philosophy - Soft vs Hard Reset (자가치유 리셋 철학)
-
-- **Soft Reset (Autonomous control, no human signature required):** L0/L1 self-healing — Chiplet reboot, Raft re-election, Token Bucket reset, V-Home re-docking, HORIZONTAL_HANDOVER entity handover. Autonomous execution under T-Reg 15% limit and permanent isolation after 3 consecutive failures.
-- **Hard Reset (Human confirmation mandatory):** L2 E_STOP_LATCH release. The RECOVERY stage following Motor EN LOW latch release strictly requires Ed25519-based human signature. Avoids automatic rebooting and complies with ISO 13849-1 / IEC 61508 standards.
-
----
-
-### 6. Technical Drafting Support & Legal Doctrine (기술 작성 지원 및 법리적 주체 명시)
-
-- **Technical Drafting & Structuring Support:** Generic Generative AI Text Refinement & Structuring Tools
-- **Role & IP Attribution Notice:** This document utilized generic generative AI text refinement and structuring tools for structural formatting, verification support, and expression mitigation. This disclosure is for role transparency; AI prompts and internal reasoning processes are not disclosed. All core technical conception, independent system architecture design, final decisions, and intellectual property (IP) ownership belong entirely to the original author (deundeuni / soma-moa).
-- **Legal Doctrines Cited (USPTO / EPO / Case Law):** Cites US Supreme Court/CAFC precedent (*Thaler v. Vidal*), USPTO AI Inventorship Guidance (2024.02), and EPO Examination Guidelines (G-II 3.3.1) denying AI inventorship. Generic AI tools serve merely as technical document refinement aids; the sole inventorship entity of this technical system is legally established as the human designer (deundeuni).
-- **Standard Compliance:** Aiming for compliance with ISO 13849-1 Cat 4 / PL e, IEC 61508 SIL3, GDPR Article 5(1)(e).
-
----
-
-### 7. Defensive Rights & Technical Protocol Identifier Notice (실리보호 및 기술 프로토콜 명칭 고지)
-
-- **Technical Protocol Identifier:** `soma-moa` (lowercase hyphenated)
-- **Technical Identifier Notice:** The term `soma-moa` in this document is used not as a commercial trademark, but as an **Open-Source Technical Protocol Identifier** for public prior art disclosure and codebase distinction.
-- **DPL Defensive Publication License Declaration:** This protocol is released under CC BY 4.0 and DPL (Defensive Publication License v1.0). Under DPL terms, other entities referencing or citing this technical concept cannot claim exclusive patent rights over it, mitigating unauthorized patent private monopolization risks by third parties and defensively expanding the public technical domain.
-- **DPL Conditional License Termination Clause:** This DPL includes a conditional retroactive termination clause stating that if any entity practicing this technology files a patent infringement lawsuit against the original author or ecosystem participants, the license intent toward said practicing entity shall be deemed retroactively non-existent.
-
----
-
-### 8. Open Foundation Models & Sole Design Attribution (개방된 기반 모델과 1인 설계 및 출처)
-
-This protocol originated from the thoughts of a single designer (deundeuni). It began from practical daily knowledge accumulated while handling factory machinery for sample work and participating as a construction laborer on job sites.
-
-soma-moa is a prior art record that systemizes these field observations into globally compliant code.
-
-In this systemization process, Transformer architectures and open technical foundations were reviewed alongside generic AI text refinement tools as auxiliary aids. The legal and technical entity of all core conceptions and independent architectural designs belongs to deundeuni.
-
----
-
-### 9. Sources & Prior Art Evidence / AS-IS Disclaimer (출처 및 선행기술 근거)
-
-- **Safety Theory:** Heinrich (1931) 300/29/1 — Philosophical motivation, Reason (1990) Swiss Cheese, Hollnagel Safety-II/Resilience, Defense in Depth, Fail-Safe, ALARP, Just Culture
-- **Functional Safety:** ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e)
-- **Communication/Consensus:** RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032
-- **Legal Precedents:** USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1
-- **Licenses:** CC BY 4.0 & DPL (Defensive Publication License v1.0)
-- **Prior Art Declaration Date & Registered DOIs:** prior art declaration: 2026-08-25 / Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (Active)
-- **Verification & Documentation Tools:** Generic Generative AI Text Refinement & Structuring Tools (Conception by deundeuni)
-- **Target Figures & AS-IS Disclaimer:** All quantitative figures (time, latency, thresholds, etc.) in this document represent Target Design Benchmarks for maximum survival capability, while the 4-Tier coupled structure and governance philosophy constitute the primary prior art. This document does not guarantee commercial operational completeness (Provided AS-IS); actual industrial implementation requires multi-stage field re-validation by professional engineers according to relevant safety standards.
-- **Trade Secrets:** eFPGA RTL, precision CAD, and firmware binaries remain undisclosed.
-
----
-
-### 10. Revision History & Alignment Patch Log (변경 이력 및 정합화 패치 기록)
-
-- **v2.2.9 Revision (2026-09-19):**
-  - **Enacted Graduated Autonomy Principle (Section 4-1):** Systematized the autonomous ladder structure as the rationale for reconciling human fatigue minimization (Quiet Assist) with ultimate human control (Axiom 0), bolstering the deterministic design rationale for L2 FSM state transition sequences.
-- **v2.2.8 Revision (2026-09-19):**
-  - **Added Barnacle Archetype Notice (Section 0):** Explicitly declared that the barnacle biomimetic structure appearing throughout the ecosystem is an intended biological motif for "together-survival" rather than casual repetition, reinforcing the philosophical defense and consistency of prior art.
-- **v2.2.7 Revision (2026-09-18):**
-  - **Defensive Tone Refinement & Shoulder Lane Terminology Patch:** Replaced over-assertive/definitive terms throughout the text with defensive phrasing. Refined L1 Shoulder path term to `Shoulder Lane (Auxiliary Path) 3-tier Control` in 1:1 alignment with Korean master text.
-- **v2.2.6 Revision (2026-09-18):**
-  - **English Text Normalization & Isomorphic Alignment:** Standardized all headings, metadata, and technical terms into 1:1 bilingual structure matching PHILOSOPHY.ko.md.
-- **v2.2.5 Revision (2026-09-18):**
-  - **Added L2 FSM `HORIZONTAL_HANDOVER` State (Sections 4-1, 4-6, 5-2):** Reflected code/state machine isomorphic interlock with Section 2 horizontal auxiliary principle.
-  - **Explicit L0 Physical Acronym Definitions (Section 4-1):** Added full expansions for CWP (Contactless Wireless Power) and V-Home (V-groove Homing, ±5mm self-alignment).
-  - **Explicit DPL Conditional Retroactive Termination Clause (Section 7):** Clarified clause regarding retroactive non-existence of license intent upon filing patent lawsuits.
-  - **Normalized Daily Tier 90% Confidence Threshold (Section 4-3):** Aligned body text with Section 4-6 summary spec.
-  - **Refined RAM Limit (Sections 4-1, 4-6):** Tightened defense range to `RAM 3.2KB (<10KB)`.
-  - **Direct Placement of Zenodo DOIs in Section 9:** Placed timestamp verification DOIs directly in Section 9 for examiner access.
-- **v2.2.4 Revision (2026-09-18):**
-  - **Trademark Dispute Prevention & Technical Identifier Definition (Metadata, Section 7):** Established `soma-moa` strictly as an open-source Technical Protocol Identifier.
-  - **Refined Horizontal Principle Instance (Section 2):** Explicitly detailed inter-entity task handover as an isomorphic together-survival instance for human task completion.
-- **v2.2.3 Revision (2026-09-18):**
-  - **Target Figures & AS-IS Disclaimer Enhancement (Section 9):** Designated benchmarks and added Provided AS-IS / mandatory engineer re-validation clauses.
-- **v2.2.2 Revision (2026-09-18):**
-  - **DPL Legal Definition Definition (Sections 7, 9):** Defined anti-patent-privatization defense scope.
-  - **Domain Normalization (Metadata, Section 7):** Standardized domain to lowercase `somamoa.ai.kr`.
-  - **L2 FSM Cutoff Latch Addition (Section 4-6):** Added `E_STOP_LATCH <0.1ms` parameter.
-- **v2.2.1 Revision (2026-09-17):**
-  - **Enacted Horizontal Multi-System Auxiliary Principle (Section 2):** Defined human productive assistance as supreme rule.
-  - **Independent Prior Art & Non-Exclusivity Notice (Section 0):** Added modesty notice citing POLYLINK-HUD 0.9.
-  - **Generalized Generative AI Drafting Support (Sections 6, 8, 9):** Applied standard AI tool documentation clauses and reaffirmed Sole Invention by deundeuni.
-  - **FSM & CBOR Re-alignment (Sections 4-1, 4-6):** Unified `Brain-Override` state and verified CBOR L0 24B / L1 32B (RAM 3.2KB) parameters.
-- **v2.2 Final (2026-08-27):** Systematized 4-Tier Survival Architecture (L0~L3) and L2 FSM spec, applied sub-categories.
-- **v2.0 (2026-08-25):** Declared defensive publication prior art, established lowercase hyphenated `soma-moa`.
-- **v1.0 / v0.1 (2026-08-24):** Initial SOMA and OSRP governance architecture planning.
-
----
-origin: by deundeuni (soma-moa) - factory sample work & construction worker background  
-repository: github.com/soma-moa  
-Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (Active)  
-prior art: 2026-08-25 | v2.2.9 Revision: 2026-09-19 | License: CC BY 4.0 & DPL
+soma-moa : Design Philosophy & Prior Art Declaration
+> Original Design: deundeuni (soma-moa) | Repository: [github.com/soma-moa](https://github.com/soma-moa)
+> Initial Record Date: 2026-08-24 | Prior Art Declaration Date: 2026-08-25 | v2.2.10 Revision (Safety Science Genealogy Expansion & Consistency Patch): 2026-09-21
+> Technical Protocol Identifier: soma-moa | License: CC BY 4.0 and DPL (Defensive Publication License)
+> Naming Definition: The term soma-moa (lowercase with hyphen) in this document is used as an open-source technical protocol identifier for public prior art declaration and codebase categorization, not as a commercial trademark.
+> Originality Provision: The Korean original text (PHILOSOPHY.ko.md) serves as the primary benchmark source, and any translated versions are for reference only.
+> 
+This document is a record of why soma-moa was designed the way it is.
+It is a record of the process, not just the result; of the thought trajectory, not merely the specifications.
+0. A Design Rooted in the Native Language
+soma-moa is not a technology that was conceived in English and translated into Korean.
+It originated from hands-on knowledge accumulated while working in factories handling various machinery, performing sample operations, and working as a construction laborer on job sites. With the recent advent of AI, it started from the thought, "Could this also be developed into documentation?"
+It is a protocol conceived deeply in Korean and proven through globally standardized code.
+Therefore, moa is not an alias, but its true name.
+While the English words gather and collect translate to "모은다" (gather), the emotional nuance of "embracing and gathering fragmented error logs and distributed terminals into one place" is exclusively conveyed in the Korean word moa.
+This is the core identity and starting point of the design of soma-moa.
+ * Modesty & Non-Exclusivity Notice:
+   Although this protocol was conceived from the sole designer's daily life, site experiences, and reasoning, the possibility that similar technical concepts or ideas were independently researched by other investigators is not excluded. This document is publicly disclosed free of charge to prevent exclusive monopolization by any specific entity and to serve as public prior art that anyone can freely reference and build upon.
+ * Barnacle Archetype Notice:
+   It is explicitly stated that the barnacle biomimetic structure repeatedly appearing across this ecosystem (connector interfaces, ground structures, marine buoys, etc.) is not a simple stylistic preference, but was adopted and referenced as the initial biological archetype for the core governance philosophy of soma-moa: "surviving together by interlocking in layers and supporting the base, rather than enduring extreme environments as isolated individuals."
+1. v0.1 OSRP - The Days of Bare Skeleton
+Project Name: OSRP (Open Symbiotic Routine Protocol)
+Initially, only the basic skeleton was established.
+ * Zero-Trust Security: Connection is allowed exclusively via authorized networks, with sensor data directed straight to the internal network.
+ * 3-Stage Escalation: WebRTC video call -> Telemetry logs -> Direct human technician dispatch.
+ * Ultimate Human Control: Automated unilateral decisions by robots are constrained, ensuring the human right of intervention.
+The word 'Routine' was discarded because it appeared as a simple scheduler and lacked intuitiveness as an engineering acronym.
+2. v1.0 SOMA - Taking on a Body & Axiom 0
+Project Name: SOMA (Symbiotic Operations & Machine Architecture)
+The system matured into governance required for virtual AI to embody physical form (Greek Soma in reality).
+ * Architectural Structure: Separated as an upper-tier governance layer responsible for safety and control, regardless of the hardware chassis (wheeled, quadrupedal, humanoid).
+ * Enactment of Charter 0 (Axiom 0):
+   "Robots/AI are subordinate (Sub), system governance is main (Main), but even that governance is merely auxiliary (Auxiliary) to primary human operations."
+ * Horizontal Multi-System Principle:
+   In horizontal relationships among multi-systems, all subsystems—including machinery, robots, and power systems—are defined as equal horizontal auxiliary means to support human productive activities within the system, rather than maintaining vertical dominance.
+ * Instance of Inter-Entity Task Handover:
+   When physical or computational limits occur among multi-robot or distributed terminal entities (e.g., between Robot A and Robot B) regarding battery level, distance, or compute capacity, the act of handing over task authority is performed not for autonomous negotiation based on individual machine interests, but for the "uninterrupted completion of human-directed productive activities." Each subsystem operates as an equal auxiliary entity mutually compensating for physical and computational weaknesses, aligning with the isomorphic co-survival governance logic based on L1/L2 specifications to secure overall system survival.
+3. v1.5 Naming Search - Criteria After 20 Names
+In addition to the English name SOMA, more than 20 candidate names were evaluated to find an easily pronounceable and intuitive name.
+ * Bodeum, Gyeol, Irum — Pronunciation is somewhat heavy.
+ * Nuri, Miso, Uri — Technical identity is not clearly communicated.
+ * Gori, Dari, Sai — Scope is too narrow to encapsulate an entire N:1 gathering platform.
+3 Established Criteria:
+ * Must be pronounceable within 0.1 seconds.
+ * Operational structure should be visualized upon hearing it.
+ * Must contain scalability to gather distributed terminals as one.
+4. v2.0 soma-moa - Systematization of Naming and Notation
+Official Name: soma-moa by deundeuni
+ * moa: The core essence of gathering scattered error logs and standards into one place.
+ * Linguistic Symmetry: Visual and auditory rhythm alignment between S O M A (ㅗㅏ) and m o a (ㅗㅏ).
+ * Lowercase Notation: Composed in lowercase hyphenated soma-moa for open-source protocol identity that developers can easily invoke in codebases.
+4-1. v2.2 Reference Structure - 4-Tier Survival Architecture & L2 Finite State Machine (FSM) Specs
+On top of the v2.0 name, the basic framework was systematized in v2.2.
+ * L0 Physical Layer (Physical): CWP (Contactless Wireless Power transfer & differential deceleration docking) battery swapping + V-Home (V-groove Homing autonomous alignment module with ±5mm precision absorption) + 0.1ms hardware cutout emergency stop (targeting Motor EN PIN LOW control).
+ * L1 Compute Layer (Compute): Chiplet-APU Many as One redundancy + CCS 70%/100ms Raft role rotation + Hard-shoulder 3-tier monitoring.
+ * L2 Governance Layer (Governance): Physical separation of inference engine (Brain, probabilistic) vs. governance (Governance, deterministic) + eFPGA 0.1ms physical circuit breaker + Finite State Machine (FSM).
+ * L3 Social Layer (Social): Quiet Assist haptic vibration (1-burst / 2-burst) + Anonymized delta logging with 10-second PII auto-destruction.
+Edge Validation Parameters (Target Design Benchmarks):
+CBOR L0 24B / L1 32B (each restricted below 50B), SDK 35.2KB (below 42KB), RAM 3.2KB (below 10KB), L0 synchronous 0.1ms HMAC hardware bypass / L1 asynchronous 2–5ms Ed25519.
+Graduated Autonomy Principle:
+Reflecting the practical limitation that humans cannot directly intervene in every anomalous situation, the L2 FSM adopts a ladder structure that delegates autonomy in stages. Following PRELOCK, the system first attempts horizontal cooperation among equal entities (HORIZONTAL_HANDOVER). If this fails to resolve anomalies in AI reasoning itself (Brain-Override) or physical hazards (E_STOP_LATCH), control is escalated to upper management and human intervention. This serves as a core design rationale to minimize human management fatigue (Quiet Assist philosophy in Chapter 4-2) while guaranteeing ultimate human authority (Charter 0).
+L2 Finite State Machine (FSM) State Transition Conditions & Roles:
+ * IDLE: Normal standby state.
+ * MONITOR: Real-time monitoring of edge sensors and logs.
+ * VALIDATE (<0.02ms): Deterministic safety rule verification via eFPGA.
+ * PRELOCK (80%): Preemptive hardware lock preparation upon reaching an 80% risk probability threshold.
+ * HORIZONTAL_HANDOVER: Preemptive handover of task authority to adjacent entities upon detecting limits in battery, distance, or compute performance (Human signature-free soft reset zone, aiming for uninterrupted human task continuity).
+ * Brain-Override: Phase where L2 deterministic governance and human control physically override and invalidate abnormal control attempts by AI inference (Brain).
+ * E_STOP_LATCH (<0.1ms): Latching motor power shutdown within 0.1ms.
+ * RECOVERY: Maintains permanent latch state; recovery is prohibited without Ed25519 human signature approval.
+4-2. v2.2 Expansion - From Daily Life to Job Sites
+ * 3-Type AS Services: Remote/OTA (Over-The-Air updates), On-call dispatch, Resident (Hospitals, Factories, Department Stores, Logistics, Repair Centers, Food Courts).
+ * Personalization: Medication/Todo/Health routines, Equipment repair history/warranties, Diet/Allergy tracking.
+ * Expanded Search: Library librarian (Finding books via cover, mood, or synopsis) + Music search (Finding songs via humming, vibe, or lyrics).
+4-3. v2.2 Sub-categorization - Moa into Enterprise / Daily / Personal
+While moa gathers everything, execution must be segmented for lightweight operation. Thus, it is sub-categorized into three tiers:
+ * Enterprise: Operational environments where continuous uptime is critical. Resident in factories, logistics, hospitals, and repair centers. Focuses on L0 0.1ms cutout control + L1 Many as One + L2 deterministic execution. Guarantees ultimate human decision-making.
+ * Daily: Environments requiring exploration and support. Food courts, department store service centers, libraries, music. Focuses on Vibe Search + L3 escalation. Avoids definitive assumptions when confidence is below 90%, performing autonomous auxiliary inquiries instead.
+ * Personal: Environments respecting individual privacy. Medication/Todo/Health, Diet/Allergies, Repair history. PII destroyed within 10s + 1-burst/2-burst haptics + minimizes indiscriminate logging.
+Connecting everything while distributing the burden is the principle of Auxiliary.
+4-4. Succession of Safety Philosophy - Safety Science Lineage & Hardware Implementation of soma-moa
+soma-moa does not present an isolated, mutant theory; it inherits the legitimate 100-year lineage of Safety Science and aims to implement (embed) it at the hardware and embedded governance levels.
+ * Heinrich (1931) Numerical Motivation: The 300:29:1 ratio serves as a historical cornerstone for safety frameworks. Rather than restricting the ratio to absolute numbers, it is cited as the primary motivation for gathering numerous near-misses and signals before a major disaster occurs.
+ * Bird (1969) Structural Reinterpretation & Prevention of Concealment: Frank Bird recalculated the ratio to 1:10:30:600, shifting the cause of disasters from individual mistakes to defects in management systems and organizational structures. He proved that structural environments forcing workers to hide near-misses to avoid punishment or surveillance are the true root causes of major disasters.
+ * Reason (1990) Active Interlocking of the Swiss Cheese Model: James Reason's Swiss Cheese Model explains that accidents occur when holes in multiple defensive layers (Latent Failures) align simultaneously. soma-moa does not leave latent failure risks unaddressed; instead, it uses L1 leukocyte fabric isolation scans, T-Reg 15% self-healing constraints, and L2 eFPGA Tri-State 3-phase isolation controls as an active hardware pipeline to seal cheese holes in real time.
+ * Hollnagel (Safety-II) Resilience: Rather than focusing solely on accident prevention (Safety-I, minimizing failures), it focuses on Resilience—stabilizing and maintaining the 9,999 successful operational states. soma-moa implements this on hardware via L1 Many as One multi-unification and Raft consensus architecture.
+ * Dekker (Just Culture) Hardware Internalization: Sidney Dekker's Just Culture warns that punitive surveillance systems ("Blame Culture") force workers to conceal accident data, jeopardizing the entire system. soma-moa embeds this culture of voluntary reporting and trust not as software policies, but as a deterministic hardware pipeline featuring L3 CBOR anonymized logging, 10-second PII auto-destruction, and minimal logging of minor errors.
+ * Lineage Positioning of soma-moa: This protocol does not add a new safety theory. Instead, it dismantles the "surveillance systems that induce concealment" pointed out by Bird and Dekker, and embodies the mitigation of multiple defense layer defects and the Just Culture demanded by Reason, Hollnagel, and Dekker into field-embedded governance (Reason-based L1 leukocyte isolation, 10-second PII destruction, quiet haptic alerts, T-Reg 15% self-healing).
+ * Harmony Between Field Work Values and Technology: Unilateral surveillance, loud alarm tones, and indiscriminate logging on job sites provoke worker bypass tactics and concealment rather than enhancing safety. Approaching governance as an "Auxiliary" support that respects worker dignity allows true symbiosis between humans and machines.
+ * Quantitative Standards Adoption: Instead of relying on historical Heinrich/Bird ratios, formal industrial safety standards such as ISO 13849-1 Cat 4 PL e / IEC 61508 SIL3 / GDPR 5(1)(e) are cited as operational benchmarks.
+> [S-01] Heinrich 1931 provides numerical motivation, and Bird 1969 offers structural reinterpretation; practical implementation relies on Reason's active Swiss Cheese containment, Safety-II, Just Culture, deterministic control, and anonymized near-miss hardware logging.
+> 
+4-5. Organic Interlocking & Preemptive Action Philosophy
+Aims to complete preemptive measures within the field through organic interlocking.
+ * L0 V-Home absorbs ±5mm physical alignment errors with precision.
+ * L1 resolves anomalies within the fabric via 70% Raft re-election, 85% backpressure throttling, and leukocyte isolation.
+ * L2 eFPGA executes deterministic lock control via 0.02ms VALIDATE and logs internal events.
+Only in situations where internal resolution is impossible, L3 issues 1-burst/2-burst haptic notifications followed by WebRTC link to human managers, preserving technician dignity through ultimate human deference.
+4-6. System Specification Summary
+Major quantitative parameters per layer for prior art comparison and examination consistency (Target Design Benchmarks) are summarized as follows:
+ * L0 Physical Latency — 0.1ms hardware emergency stop cutout control (Motor EN PIN LOW).
+ * L0 Physical Error Absorption — V-Home Self-Align ±5mm precision absorption.
+ * L0/L1 Verification Latency — L0 synchronous 0.1ms HMAC hardware bypass / L1 asynchronous 2–5ms Ed25519.
+ * L1 Consensus Threshold — CCS Raft 70% agreement / 100ms role rotation.
+ * L1 Backpressure Throttling — Automatic throttling upon detecting 85% fabric backpressure.
+ * L1 Data Payload — CBOR packets L0 24B / L1 32B (each capped below 50B).
+ * L2 Governance Verification Latency — eFPGA deterministic VALIDATE <0.02ms.
+ * L2 Governance Lock Latch — E_STOP_LATCH <0.1ms physical power shutdown.
+ * L2 Governance Predictive Threshold — PRELOCK preemptive shutdown prep upon reaching 80% risk probability.
+ * L2 Governance Horizontal Handover — HORIZONTAL_HANDOVER resource and task transfer upon detecting limits.
+ * L2 Governance Self-Healing Limit — T-Reg 15% limit and permanent isolation after 3 consecutive failures.
+ * L3 Social Trust Threshold — Prohibition of definitive assumptions when Daily Vibe Search confidence is below 90%.
+ * L3 Social PII Destruction Period — Anonymized delta logging destroyed within 10 seconds.
+ * Edge Embedded Resource Constraints — SDK size 35.2KB (≤42KB), RAM 3.2KB (≤10KB).
+5. Auxiliary Governance & Prior Art Declaration
+Purpose of Disclosure (2026-08-25): This document publicly discloses minimum safety governance standards as prior art to mitigate the risk of exclusive patent monopolization by specific entities, establishing it as a public technology available to all.
+ * Premise of Coexistence: "Arrive with a smile, leave with a smile."
+ * Principle of Auxiliary Support: Governance performs a lightweight auxiliary role without disrupting primary tasks.
+ * Deterministic Control: Even during abnormal AI behaviors, power bus cutoff is executed via L0 breakers.
+5-1. Technician Dignity & Quiet Assist Protocol
+ * Quiet Assist: Utilizes haptic 1-burst/2-burst alerts perceptible only to the worker instead of loud alarms.
+ * Consideration Without Record: Minor simple errors are automatically deleted after 10 seconds to alleviate psychological burden, while physical hazard logs are retained.
+ * Technician Respect Principle: Establishes technology value as an Auxiliary helper, not a surveillance tool.
+Summary: Physical safety is decisively secured via L0 cutout control, while social safety is implemented through subtle haptic alerts and autonomous deletion rules.
+5-2. Self-Healing Reset Philosophy - Soft Reset vs Hard Reset
+ * Soft Reset (Autonomous Control, No Human Signature Required): L0/L1 self-healing — chiplet reboot, Raft re-election, token bucket reset, V-Home redocking, HORIZONTAL_HANDOVER entity transfer. Executed autonomously under T-Reg 15% limits and max 3-consecutive-failure isolation rules.
+ * Hard Reset (Human Verification Mandatory): L2 E_STOP_LATCH release. Motor EN LOW latch release followed by the RECOVERY stage strictly requires Ed25519-based human cryptographic signature. Automated reboots are prohibited, complying with ISO 13849-1 / IEC 61508.
+6. Technical Drafting Support & Legal Doctrine
+ * Technical Drafting Support & Structuring: Generic Generative AI Text Refinement & Structuring Tools.
+ * Role & Intellectual Property (IP) Attribution Notice: This document utilized generic generative AI text refinement and structuring tools for technical context structuring, proofreading, and expression smoothing. This notice is provided for role transparency; internal AI prompts and inference processes are not disclosed. All core technical conceptions, independent system architecture designs, final decisions, and IP ownership belong entirely to the original author (deundeuni / soma-moa).
+ * Legal Doctrines Cited (USPTO / EPO / Case Law): Cites U.S. Supreme Court/CAFC precedent (Thaler v. Vidal), USPTO AI Inventorship Guidance (2024.02), and EPO Examination Guidelines (G-II 3.3.1) rejecting AI inventorship. Generic AI tools serve merely as technical drafting aids; the sole legal and technical conceiver of this invention is established as the human designer (deundeuni).
+ * Standard Compliance: Aims for compliance with ISO 13849-1 Cat 4 / PL e, IEC 61508 SIL3, and GDPR 5(1)(e).
+7. Defensive Rights & Technical Protocol Identifier Notice
+ * Technical Protocol Identifier: soma-moa (lowercase with hyphen).
+ * Technical Identifier Notice: The term soma-moa in this document is used as an open-source Technical Protocol Identifier for public prior art declaration and codebase distinction, not as a commercial trademark.
+ * DPL Defensive Publication License Declaration: Disclosed under CC BY 4.0 and DPL (Defensive Publication License v1.0). Under DPL provisions, any entity referencing or citing this technical architecture cannot assert exclusive patent rights against it, mitigating patent trolling risks and securing the public domain defensively.
+ * DPL Conditional Termination Clause: Includes a conditional retroactive termination clause stating that if an entity practicing this technology files a patent infringement lawsuit against the original author or ecosystem participants, license rights are deemed retroactively void.
+8. Open Foundation Models, Sole Conception, and Attribution
+This protocol originated from the reasoning of a sole designer (deundeuni). It began from real-world daily knowledge accumulated while operating machinery in factories, executing sample work, and participating in construction sites as a laborer.
+soma-moa is a prior art record that systematized this field experience into globally standardized code.
+General AI context refinement tools were reviewed as auxiliary drafting aids during this systematization process alongside Transformer architectures and open technical foundations. The legal and technical conceiver of all core concepts and architectural designs is deundeuni.
+9. Sources & AS-IS Disclaimer
+ * Safety Theories: Heinrich (1931) 300/29/1 — Numerical motivation; Bird (1969) 1:10:30:600 — Structural reinterpretation & management defects; Reason (1990) Swiss Cheese — Active containment of multiple defense layers; Hollnagel Safety-II/Resilience; Dekker (2012) Just Culture; Defense in Depth; Fail-Safe; ALARP.
+ * Functional Safety: ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e).
+ * Communication / Consensus: RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032.
+ * Legal: USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1.
+ * License: CC BY 4.0 & DPL (Defensive Publication License v1.0).
+ * Prior Art Verification Date & Zenodo DOIs: Prior art declaration: 2026-08-25 / Zenodo DOI: 10.5281/zenodo.22373538 / 22373722 / 22373704 / 22373189 / 22373686 / 22374987 (Registered / Active).
+ * Verification & Drafting Tools: Generic Generative AI Text Refinement & Structuring Tools (Conception by deundeuni).
+ * Target Figures & AS-IS Disclaimer: All quantitative figures (time, latency, thresholds) in this document serve as Target Design Benchmarks for maximum survivability; the 4-tier combination and governance philosophy constitute the core prior art. This document does not guarantee commercial operational completeness (Provided AS-IS). Practical industrial implementation requires professional engineer re-validation and field verification in accordance with relevant safety standards.
+ * Trade Secrets: eFPGA RTL, precision CAD, and firmware binaries remain undisclosed.
+10. Revision History
+ * v2.2.10 Revision (2026-09-21):
+   * Systematic Expansion of Safety Science Lineage & Positioning of soma-moa (Chapter 4-4): Systematized the safety science lineage: Heinrich (numerical motivation) → Bird (structural reinterpretation/prevention of concealment) → Reason (active Swiss Cheese containment) → Hollnagel (Safety-II success-oriented resilience) → Dekker (Just Culture). Clarified soma-moa as a field-embedded governance implementing these requirements via hardware pipelines (Reason-based L1 leukocyte isolation, 10s PII destruction, quiet haptics, T-Reg 15%).
+   * Internal Consistency Adjustments: Corrected Chapter 1 typo, explicit interlocking of Reason's Swiss Cheese model between Chapters 4-4 and 4-5, and updated Chapter 9 sources and Footnote [S-01].
+ * v2.2.9 Revision (2026-09-19):
+   * Graduated Autonomy Principle Specified (Chapter 4-1): Systematized autonomy ladder structure balancing human management fatigue (Quiet Assist) with ultimate human authority (Charter 0), supplementing deterministic FSM state transition rationale.
+ * v2.2.8 Revision (2026-09-19):
+   * Barnacle Archetype Notice Added (Chapter 0): Clarified that the recurring barnacle biomimetic structure is an intentional biological motif representing "co-survival" governance under extreme conditions, reinforcing philosophical consistency and prior art defense.
+ * v2.2.7 Revision (2026-09-18):
+   * Defensive Tone Alignment: Adjusted definitive terms ("completed", "finalized") across the document to flexible expressions ("aiming for", "systematized", "reflecting interlocking") for defensive posture and future module expansions.
+ * v2.2.6 Revision (2026-09-18):
+   * English Term Normalization: Standardized major subheadings, metadata, and technical terms (FSM, Resilience, Provided AS-IS) with bilingual alignment.
+ * v2.2.5 Revision (2026-09-18):
+   * Added L2 FSM HORIZONTAL_HANDOVER State (Chapters 4-1, 4-6, 5-2): Reflected isomorphic interlocking with Chapter 2 Horizontal Auxiliary Principle.
+   * Explicit L0 Terms (Chapter 4-1): Expanded CWP and V-Home definitions.
+   * DPL Conditional Termination Clause (Chapter 7): Clarified retroactive voiding upon patent litigation.
+   * Daily Vibe Search Alignment (Chapter 4-3): Synced <90% confidence inquiry rule between main text and summary tables.
+   * RAM Limit Tightening (Chapters 4-1, 4-6): Tightened memory bounds to RAM 3.2KB (<10KB).
+   * Direct Zenodo DOI Placement (Chapter 9): Placed DOIs directly for patent examiner timestamp verification.
+ * v2.2.4 Revision (2026-09-18):
+   * Technical Protocol Identifier Notice (Metadata, Chapter 7): Preemptively blocked trademark disputes by defining soma-moa strictly as an open-source technical identifier.
+   * Horizontal Auxiliary Principle Instance (Chapter 2): Explicitly specified inter-robot resource/task handover as an instance of uninterrupted human productivity.
+ * v2.2.3 Revision (2026-09-18):
+   * Target Figures & AS-IS Disclaimer (Chapter 9): Defined Target Design Benchmarks and mandatory professional engineer re-validation rules.
+ * v2.2.2 Revision (2026-09-18):
+   * DPL Legal Definition (Chapters 7, 9): Defined Defensive Publication License mechanics preventing unauthorized patenting.
+   * Domain Normalization (Metadata, Chapter 7): Standardized domain to lowercase somamoa.ai.kr.
+   * L2 FSM Latch Figure (Chapter 4-6): Added E_STOP_LATCH <0.1ms power shutdown figure to summary table.
+ * v2.2.1 Revision (2026-09-17):
+   * Enacted Horizontal Multi-System Principle (Chapter 2): Defined human productivity assistance as the supreme constitutional rule over vertical machine hierarchies.
+   * Modesty & Non-Exclusivity Notice (Chapter 0): Added public prior art declaration based on POLYLINK-HUD 0.9.
+   * General Drafting Support Terms (Chapters 6, 8, 9): Standardized AI drafting tool disclosures and re-confirmed Sole Invention (deundeuni).
+   * FSM Term & CBOR Payload Alignment (Chapters 4-1, 4-6): Unified Brain-Override and re-verified CBOR L0 24B / L1 32B (RAM 3.2KB) limits.
+ * v2.2 Final (2026-08-27): Systematized 4-tier survival architecture (L0–L3) and L2 FSM specs; applied Enterprise/Daily/Personal sub-categorization.
+ * v2.0 (2026-08-25): Public prior art declaration; established lowercase hyphenated soma-moa naming.
+ * v1.0 / v0.1 (2026-08-24): Initial governance architecture design for SOMA and OSRP.
