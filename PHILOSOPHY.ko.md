@@ -1,7 +1,6 @@
-
-soma-moa : 설계 철학 및 선행기술 선언서 (Design Philosophy & Prior Art Declaration)
-> 원안 설계: deundeuni (soma-moa) | 저장소: [github.com/soma-moa](https://github.com/soma-moa)
-> 최초 기록일: 2026-08-24 | 선행기술 선언일: 2026-08-25 | v2.2.10 안전과학 계보 확장 및 정합성 보완 개정: 2026-09-21
+Soma-moa : 설계 철학 및 선행기술 선언서 (Design Philosophy & Prior Art Declaration)
+> 원안 설계: deundeuni (soma-moa) | 저장소: github.com/soma-moa
+> 최초 기록일: 2026-08-24 | 선행기술 선언일: 2026-08-25 | v2.2.11 설계방법론 계보 신설 및 정합성 보완 개정: 2026-09-25
 > 기술 프로토콜 식별자: soma-moa | 라이선스: CC BY 4.0 및 DPL (방어적 공개 라이선스)
 > 네이밍 사전 정의: 본 문서의 soma-moa(소문자 하이픈)는 상업적 상표(Trademark)가 아닌, 공익적 선행기술 공개 및 코드베이스 구분을 위한 오픈소스 기술 프로토콜 명칭으로 사용된다.
 > 원본 조항: 한국어 원문(PHILOSOPHY.ko.md)이 기준 원본이며, 번역본은 참고용이다.
@@ -15,10 +14,8 @@ soma-moa는 영어로 먼저 만들고 한국어로 번역한 기술이 아니�
 그래서 moa(모아)는 별칭이 아니라 본명이다.
 영어 gather, collect는 "모은다"로 번역되지만, "파편화된 에러 로그와 분산된 단말을 한데 보듬어 모은다"는 온도는 한국어 '모아'에만 담겨 있다.
 이것이 soma-moa의 정체성이자 설계의 시작점이다.
- * 독립적 선행 연구 및 무독점 고지 (Modesty & Non-Exclusivity Notice):
-   본 프로토콜은 1인 설계자의 일상 및 현장 경험과 사유에서 구상되었으나, 유사한 기술적 사상이나 아이디어가 타 연구자에 의해 독립적으로 선행 연구되었을 가능성을 배제하지 않는다. 본 문서는 특정 주체의 배타적 독점을 방지하고, 공공의 선행기술(Prior Art)로서 누구나 자유롭게 참조 및 발전시킬 수 있도록 무상 공개된다.
- * 생체모방 원형 (Barnacle Archetype) 고지:
-   본 생태계 전반(커넥터 접점, 지면 구조물, 해양 부표 등)에 지속 등장하는 따개비 생체모방 구조는 단순한 취향적 반복이 아닌, "개체 단독으로 극한 환경을 버티는 것이 아니라 층층이 결합하고 바닥을 지지하며 함께 생존한다"는 soma-moa 핵심 거버넌스의 최초 생물학적 원형(archetype)으로 채택·원용된 것임을 명시한다.
+ * 독립적 선행 연구 및 무독점 고지 (Modesty & Non-Exclusivity Notice): 본 프로토콜은 1인 설계자의 일상 및 현장 경험과 사유에서 구상되었으나, 유사한 기술적 사상이나 아이디어가 타 연구자에 의해 독립적으로 선행 연구되었을 가능성을 배제하지 않는다. 본 문서는 특정 주체의 배타적 독점을 방지하고, 공공의 선행기술(Prior Art)로서 누구나 자유롭게 참조 및 발전시킬 수 있도록 무상 공개된다.
+ * 생체모방 원형 (Barnacle Archetype) 고지: 본 생태계 전반(커넥터 접점, 지면 구조물, 해양 부표 등)에 지속 등장하는 따개비 생체모방 구조는 단순한 취향적 반복이 아닌, "개체 단독으로 극한 환경을 버티는 것이 아니라 층층이 결합하고 바닥을 지지하며 함께 생존한다"는 soma-moa 핵심 거버넌스의 최초 생물학적 원형(archetype)으로 채택·원용된 것임을 명시한다.
 1. v0.1 OSRP - 뼈대만 있던 시절
 프로젝트명: OSRP (개방형 유기적 루틴 프로토콜, Open Symbiotic Routine Protocol)
 처음엔 기본 뼈대부터 잡았다.
@@ -30,12 +27,9 @@ soma-moa는 영어로 먼저 만들고 한국어로 번역한 기술이 아니�
 프로젝트명: SOMA (공생적 운용 및 기계 아키텍처, Symbiotic Operations & Machine Architecture)
 가상 AI가 현실의 몸(그리스어 Soma)을 입는 순간 필요한 거버넌스로 체급을 키웠다.
  * 설계 구조: 하드웨어 섀시(바퀴, 4족, 휴머노이드)의 형태와 무관하게 상위에서 안전과 통제를 담당하는 거버넌스 레이어로 분리.
- * 0번 헌장 (공리 0, Axiom 0) 제정:
-   "로봇/AI는 부(Sub), 시스템 거버넌스는 주(Main)지만, 그 거버넌스조차도 인간의 주 작업에는 보조(Auxiliary)다."
- * 수평적 다중 시스템 보조 원칙 (Horizontal Multi-System Principle):
-   다중 시스템의 수평적 관계에서 기계, 로봇, 전력 시스템을 포함한 모든 서브시스템은 상하 수직 지배 관계가 아닌, 시스템 내 인간의 생산적 활동을 보조하는 동등한 수평적 보조 수단으로 정의한다. (In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system.)
- * 수평적 역할 이행 및 작업 연속성 실시예 (Instance of Inter-Entity Task Handover):
-   다중 로봇 또는 분산 단말 개체 간(예: 로봇 A와 로봇 B) 배터리 잔량, 상주 거리, 연산 성능 등 물리적 한계 상황 발생 시, 작업 주도권을 상호 이양하는 행위는 기계 개체 간의 개별적 이해관계에 따른 자율 협상이 아닌 "인간이 지시한 생산적 활동의 중단 없는 완수"를 목적으로 수행된다. 각 서브시스템은 서로의 물리적·연산적 약점을 상호 보완하는 동등한 보조 주체로서 동작하며, 본 자원 교대 제어 구조는 시스템 전체의 생존성을 확보하는 L1/L2 백서 기반 동형(Isomorphic) 함께생존 거버넌스 로직 구현으로 연결되는 것을 지향한다.
+ * 0번 헌장 (공리 0, Axiom 0) 제정: "로봇/AI는 부(Sub), 시스템 거버넌스는 주(Main)지만, 그 거버넌스조차도 인간의 주 작업에는 보조(Auxiliary)다."
+ * 수평적 다중 시스템 보조 원칙 (Horizontal Multi-System Principle): 다중 시스템의 수평적 관계에서 기계, 로봇, 전력 시스템을 포함한 모든 서브시스템은 상하 수직 지배 관계가 아닌, 시스템 내 인간의 생산적 활동을 보조하는 동등한 수평적 보조 수단으로 정의한다. (In a multi-system horizontal relationship, machines, robots, power systems, and all subsystems are defined as means to assist human productive activities within the system.)
+ * 수평적 역할 이행 및 작업 연속성 실시예 (Instance of Inter-Entity Task Handover): 다중 로봇 또는 분산 단말 개체 간(예: 로봇 A와 로봇 B) 배터리 잔량, 상주 거리, 연산 성능 등 물리적 한계 상황 발생 시, 작업 주도권을 상호 이양하는 행위는 기계 개체 간의 개별적 이해관계에 따른 자율 협상이 아닌 "인간이 지시한 생산적 활동의 중단 없는 완수"를 목적으로 수행된다. 각 서브시스템은 서로의 물리적·연산적 약점을 상호 보완하는 동등한 보조 주체로서 동작하며, 본 자원 교대 제어 구조는 시스템 전체의 생존성을 확보하는 L1/L2 백서 기반 동형(Isomorphic) 함께생존 거버넌스 로직 구현으로 연결되는 것을 지향한다.
 3. v1.5 네이밍 탐색 - 20개의 이름을 지난 기준
 SOMA라는 영문명 외에, 발음하기 편하고 직관적인 이름을 찾아 20개 넘게 검토했다.
  * 보듬, 결, 이룸 — 발음이 다소 무겁다.
@@ -56,19 +50,17 @@ v2.0의 이름 위에 v2.2에서 시스템의 기본 뼈대가 체계화되었�
  * L1 연산 계층 (Compute): 칩렛 APU 다중 일체화(Chiplet-APU Many as One) 이중화 + CCS 70%/100ms Raft 역할 교대 + 갓길 3중 관제
  * L2 거버넌스 계층 (Governance): 추론 엔진(Brain, 확률론적) vs 거버넌스(Governance, 결정론적) 물리 분리 + eFPGA 0.1ms 물리 차단기 + 유한 상태 머신(FSM)
  * L3 사회적 계층 (Social): 조용한 보조 햅틱 진동 1회/2회 + 익명화 델타 로깅 PII 10초 파기
-엣지 검증 파라미터 (목표 설계 기준, Target Design Benchmarks):
-CBOR L0 24B / L1 32B (각 50B 이하 제한), SDK 35.2KB (42KB 이하), RAM 3.2KB (10KB 이하), L0 동기 0.1ms HMAC 하드웨어 우회 / L1 비동기 2~5ms Ed25519
-FSM 단계적 권한 위임 원칙 (Graduated Autonomy Principle):
-인간이 모든 이상 상황에 매번 직접 개입할 수 없다는 현실적 한계를 반영하여, L2 FSM은 자율권을 단계적으로 위임하는 사다리 구조를 취한다. PRELOCK 이후 우선 동등한 개체 간 자율 협력(HORIZONTAL_HANDOVER)을 시도하고, 이로 해결되지 않는 AI 판단 자체의 이상(Brain-Override)이나 물리적 위험(E_STOP_LATCH)이 확인될 경우 상위 통제 및 인간 개입으로 단계적 확대를 지향한다. 이는 인간의 관리 피로도를 최소화하는 Quiet Assist 철학(4-2장)과 인간 최종 결정권을 보장하는 0번 헌장을 동시에 충족시키기 위한 핵심 설계 근거이다.
-L2 유한 상태 머신(FSM) 전이 조건 및 역할 정의:
- * IDLE (대기): 정상 대기 상태
- * MONITOR (감시): 엣지 센서 및 로그 실시간 감시
- * VALIDATE (검증, <0.02ms): eFPGA 기반 결정론적 안전 규칙 검증
- * PRELOCK (선제 잠금, 80%): 위험 예측 확률 80% 도달 시 선제적 하드웨어 잠금 준비
- * HORIZONTAL_HANDOVER (수평 이양): 배터리·거리·연산 성능 한계 감지 시 인접 개체로 작업 주도권 선제 이양 (인간 서명 불요 소프트 리셋 영역, 인간 작업 연속성 유지 지향)
- * Brain-Override (Brain 우위 무효화): AI 추론(Brain)의 이상 제어 시도를 L2 결정론적 거버넌스 및 인간 제어권이 물리적으로 즉시 무효화하고 우위권을 확보하는 단계
- * E_STOP_LATCH (비상 정지 래치, <0.1ms): 0.1ms 이내 모터 전원 차단 래치 고정
- * RECOVERY (복구): Ed25519 인간 서명 승인 없이는 복구를 불허하며 영구 래치 상태 유지
+ * 엣지 검증 파라미터 (목표 설계 기준, Target Design Benchmarks): CBOR L0 24B / L1 32B (각 50B 이하 제한), SDK 35.2KB (42KB 이하), RAM 3.2KB (10KB 이하), L0 동기 0.1ms HMAC 하드웨어 우회 / L1 비동기 2~5ms Ed25519
+ * FSM 단계적 권한 위임 원칙 (Graduated Autonomy Principle): 인간이 모든 이상 상황에 매번 직접 개입할 수 없다는 현실적 한계를 반영하여, L2 FSM은 자율권을 단계적으로 위임하는 사다리 구조를 취한다. PRELOCK 이후 우선 동등한 개체 간 자율 협력(HORIZONTAL_HANDOVER)을 시도하고, 이로 해결되지 않는 AI 판단 자체의 이상(Brain-Override)이나 물리적 위험(E_STOP_LATCH)이 확인될 경우 상위 통제 및 인간 개입으로 단계적 확대를 지향한다. 이는 인간의 관리 피로도를 최소화하는 Quiet Assist 철학(4-2장)과 인간 최종 결정권을 보장하는 0번 헌장을 동시에 충족시키기 위한 핵심 설계 근거이다.
+ * L2 유한 상태 머신(FSM) 전이 조건 및 역할 정의:
+   * IDLE (대기): 정상 대기 상태
+   * MONITOR (감시): 엣지 센서 및 로그 실시간 감시
+   * VALIDATE (검증, <0.02ms): eFPGA 기반 결정론적 안전 규칙 검증
+   * PRELOCK (선제 잠금, 80%): 위험 예측 확률 80% 도달 시 선제적 하드웨어 잠금 준비
+   * HORIZONTAL_HANDOVER (수평 이양): 배터리·거리·연산 성능 한계 감지 시 인접 개체로 작업 주도권 선제 이양 (인간 서명 불요 소프트 리셋 영역, 인간 작업 연속성 유지 지향)
+   * Brain-Override (Brain 우위 무효화): AI 추론(Brain)의 이상 제어 시도를 L2 결정론적 거버넌스 및 인간 제어권이 물리적으로 즉시 무효화하고 우위권을 확보하는 단계
+   * E_STOP_LATCH (비상 정지 래치, <0.1ms): 0.1ms 이내 모터 전원 차단 래치 고정
+   * RECOVERY (복구): Ed25519 인간 서명 승인 없이는 복구를 불허하며 영구 래치 상태 유지
 4-2. v2.2 확장 - 일상에서 현장까지
  * AS 3종 서비스: 원격/OTA(무선 업데이트), 출동, 상주(병원/공장/백화점/물류/수리센터/푸드코너)
  * 개인 맞춤화: 약/할일/건강 루틴, 기기 수리이력/보증, 식단/알러지
@@ -113,6 +105,13 @@ soma-moa는 독립된 돌연변이적 이론을 제시하는 것이 아닌, 100�
  * L3 사회적 신뢰도 임계치 — 일상용 Vibe Search 신뢰도 90% 미만 시 단정적 추측 금지
  * L3 사회적 PII 파기 주기 — 익명화 델타 로깅 10초 이내 파기
  * 엣지 임베디드 리소스 제약 — SDK 크기 35.2KB (42KB 이하), RAM 3.2KB (10KB 이하)
+4-7. 도메인 간 전이 설계 방법론의 학술적 계보 (Cross-Domain Transfer Methodology Lineage)
+soma-moa 및 FIRST-LIGHT 계열 백서 전반에서 반복적으로 관찰되는 설계 방식 — 하나의 구조적 원칙(단일장애점 제거, 국소 격리, 우선순위 컷오프, '함께생존' 축)을 반도체 연산 계층부터 극지·해양·사막 재난 인프라, 배터리 도킹, 안전 거버넌스에 이르는 서로 다른 도메인에 일관되게 재적용하는 방식 — 은 창안자 개인이 창시한 방법론이 아니라, 이미 여러 학문 분과에서 정립되어 온 유추적 전이 사고(Analogical Transfer Thinking)의 실무적 적용에 해당함을 명시한다. 이는 4-4장의 안전과학 계보 계승 원칙과 동일한 정신으로, 설계 방법론 층위에서도 독립된 창시가 아닌 기존 학술 계보의 실장(實裝)임을 밝히는 것이다.
+ * TRIZ (발명 문제 해결 이론, Genrich Altshuller 1946~) — 서로 다른 산업 분야에서 이미 검증된 발명 해법 패턴(40대 발명 원리 등)을 전혀 다른 문제 영역에 전이 적용하는 것을 체계화한 발명이론. 본 프로토콜의 국소 격리(Local Quality), 선제적 조치(Prior Action), 비대칭 처리(Asymmetry) 원리와 상통한다.
+ * 일반 시스템 이론 (General Systems Theory, Ludwig von Bertalanffy 1968) — 생물학적·공학적·사회적 시스템이 표면적 도메인과 무관하게 공통된 구조 원리(피드백, 항상성, 단일 장애점)로 작동한다는 것을 정립한 이론적 토대. 본 프로토콜이 L0~L3 전 계층 및 도메인 전반에 동형(Isomorphic) 구조를 적용하는 근거와 상통한다.
+ * 패턴 언어 (Pattern Language, Christopher Alexander 1977) — 동일한 구조적 해법이 스케일과 도메인을 넘어 반복 적용될 수 있다는 건축학적 개념으로, 이후 소프트웨어 디자인 패턴 이론으로 확장되었다.
+ * 유추적 설계 연구 (Analogical Design / Far-Domain Transfer, 설계인지 공학 분야) — 서로 먼 도메인(far domain) 간의 유추적 전이가 근접 도메인 간 전이보다 오히려 설계 혁신성을 높인다는 실증 연구 계보.
+soma-moa의 방법론적 계보 위치 정립: 본 프로토콜은 위 이론들이 정립한 "도메인 무관 구조 원칙의 전이 적용"이라는 방법론적 틀을 독자적으로 고안한 것이 아니라, 현장 문제의식에서 출발해 동일한 원칙을 여러 물리적·사회적 도메인에 일관되게 재적용한 실무적 실장 사례로 스스로를 위치시킨다. 이는 결과물의 도메인 폭(breadth) 자체를 독창성의 근거로 주장하는 것이 아니라, 그 폭을 지탱하는 단일 구조 원칙의 일관성과 정합성을 방어의 근거로 삼는다는 것을 의미한다.
 5. 보조 거버넌스 (Auxiliary Governance) & 선행기술 공개 (Prior Art)
 공개 목적 (2026-08-25): 본 문서는 AI·로봇·인간의 공존을 위한 최소 안전 보조 규격을 선행기술로 공개하여, 특정 주체의 배타적 특허 독점 위험을 완화하고 누구나 활용할 수 있는 공공의 기술로 정립하는 것을 지향한다.
  * 공존의 전제: "웃으며 출근, 웃으며 퇴근"
@@ -142,6 +141,7 @@ soma-moa는 이러한 현장 사유를 글로벌 규격 코드로 체계화한 �
 이 설계 체계화 과정에서 트랜스포머 아키텍처 및 개방된 기술 기반과 함께 범용 AI 문맥 정제 도구를 검토 보조 수단으로 활용하였다. 모든 핵심 착상 및 독자적 아키텍처 설계의 법리적·기술적 주체는 deundeuni에게 있다.
 9. 출처 및 선행기술 근거 (Sources & AS-IS Disclaimer)
  * 안전 이론: Heinrich (1931) 300/29/1 — 수치적 동기, Bird (1969) 1:10:30:600 — 구조적 재해석 및 관리 결함, Reason (1990) Swiss Cheese — 다중 방어선 능동 봉쇄, Hollnagel Safety-II/Resilience, Dekker (2012) Just Culture — 공정 문화, Defense in Depth, Fail-Safe, ALARP
+ * 설계방법론: TRIZ (Genrich Altshuller), General Systems Theory (Ludwig von Bertalanffy 1968), Pattern Language (Christopher Alexander 1977), Analogical/Far-Domain Transfer Design Research
  * 기능안전: ISO 13849-1:2023 PL e, IEC 61508 SIL3, GDPR Article 5(1)(e)
  * 통신/합의: RFC 8949 CBOR, Ongaro 2014 Raft, HMAC-SHA256, Ed25519 RFC8032
  * 법률: USPTO AI Inventorship Guidance 2024.02, Thaler v. Vidal 2022, EPO G-II 3.3.1
@@ -151,6 +151,9 @@ soma-moa는 이러한 현장 사유를 글로벌 규격 코드로 체계화한 �
  * 수치 가이드라인 선언 및 상업적 보증 불용 고지 (Target Figures & AS-IS Disclaimer): 본 문서에 기재된 모든 정량 수치(시간, 지연, 임계치 등)는 최고 생존성을 위한 목표치 가이드라인(Target Design Benchmarks)에 해당하며, 4-Tier 결합 구조 및 거버넌스 사상이 핵심 선행기술이다. 본 문서는 상업적 동작 완전성을 보증하지 않으며(현 상태 그대로 제공, Provided AS-IS), 실제 산업 현장 구현 및 적용 시 관련 안전 표준에 따른 전문 엔지니어의 현장 다중 재검증 및 실증 절차가 필수적으로 요구된다.
  * 영업비밀: eFPGA RTL, 정밀 CAD, 펌웨어 바이너리는 비공개 유지
 10. 변경 이력 및 정합화 패치 기록 (Revision History)
+ * v2.2.11 Revision (2026-09-25):
+   * 4-7장 신설: 도메인 간 전이 설계 방법론의 학술적 계보(TRIZ, 일반 시스템 이론, 패턴 언어, 유추적 설계 연구) 명시. soma-moa 및 FIRST-LIGHT 계열 전반에서 반복되는 "단일 구조 원칙의 다중 도메인 재적용" 방식이 독자 창시가 아닌 기존 학술 계보의 실무적 실장임을 4-4장 안전과학 계보 계승 원칙과 동일한 정신으로 명시.
+   * 9장 출처에 "설계방법론" 카테고리 신설: TRIZ, General Systems Theory, Pattern Language, Analogical/Far-Domain Transfer Design Research 추가.
  * v2.2.10 Revision (2026-09-21):
    * 4-4장 안전과학 계보 체계적 확장 및 soma-moa의 계보적 위치 명시: Heinrich(수치적 동기) → Bird(구조적 재해석 및 관리 결함/은폐 방지) → Reason(스위스 치즈 다중 방어선 능동 봉쇄) → Hollnagel(Safety-II 성공 중심 회복 탄력성) → Dekker(Just Culture 공정 문화)로 이어지는 안전과학 정통 계보를 구체화하고, soma-moa가 이 요구 사항들을 하드웨어 파이프라인(Reason 기반 L1 백혈구 격리, PII 10초 파기, 조용한 햅틱, T-Reg 15%)으로 실장한 현장 거버넌스임을 명확히 보완.
    * 문서 내부 정합성 정비: 1장 오탈자 정정("떨어진다"), 4-4장 및 4-5장 간 Reason 스위스 치즈 모델 연동 명시, 9장 출처 및 각주[S-01] 정합화 반영.
